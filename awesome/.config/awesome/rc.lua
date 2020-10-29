@@ -9,8 +9,8 @@
 local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
-local blind = require("blind")
-local kbdcfg = require("keyboard_layout")
+local blind         = require("blind")
+local kbdcfg        = require("keyboard_layout")
 local gears         = require("gears")
 local awful         = require("awful")
                       require("awful.autofocus")
@@ -273,16 +273,16 @@ globalkeys = my_table.join(
               {description = "Show logout screen", group = "launcher"}),
     -- cmus control
     --
-    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("cmus-remote --pause") end),
-    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("cmus-remote --next") end),
-    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("cmus-remote --prev") end),
+    awful.key({ }, "XF86AudioPlay",        function () awful.util.spawn("cmus-remote --pause") end),
+    awful.key({ }, "XF86AudioNext",        function () awful.util.spawn("cmus-remote --next") end),
+    awful.key({ }, "XF86AudioPrev",        function () awful.util.spawn("cmus-remote --prev") end),
     awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("cmus-remote --vol +5%") end),
     awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("cmus-remote --vol -5%") end),
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("amixer -D pulse set Master 1+ toggle") end),
+    awful.key({ }, "XF86AudioMute",        function () awful.util.spawn("amixer -D pulse set Master 1+ toggle") end),
 
 
     -- Shift-Alt to change keyboard layout
-    awful.key({"Shift"}, "Alt_L", function () beautiful.kbdcfg.switch_next() end),
+    awful.key({"Shift"}, "Alt_L",  function () beautiful.kbdcfg.switch_next() end),
     -- Alt-Shift to change keyboard layout
     awful.key({"Mod1"}, "Shift_L", function () beautiful.kbdcfg.switch_next() end),
 
@@ -614,7 +614,7 @@ clientkeys = my_table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ "Control"    }, "q",      function (c) c:kill()                         end,
+    awful.key({ "Control"         }, "q",      function (c) c:kill()                              end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -742,6 +742,8 @@ awful.rules.rules = {
 
     { rule = { class = "Gimp", role = "gimp-image-window" },
           properties = { maximized = true } },
+    { rule = { instance = "tui-player"},
+      properties = { screen = 1, tag = awful.util.tagnames[2] } },
 }
 -- }}}
 
@@ -838,3 +840,4 @@ end)
 --        )
 
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+awful.spawn.with_shell("~/.config/awesome/player.sh")
