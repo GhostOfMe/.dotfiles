@@ -68,14 +68,15 @@ local function launch(args)
     local icon_margin = args.icon_margin or 16
 
     local onlogout = args.onlogout or function () awesome.quit() end
-    local onlock = args.onlock or function() 
-        capi.keygrabber.stop()  
-        awful.spawn.with_shell("systemctl suspend") 
+    local onlock = args.onlock or function()
+        capi.keygrabber.stop()
+        awful.spawn.with_shell("systemctl suspend")
     end
     local onreboot = args.onreboot or function() awful.spawn.with_shell("reboot") end
     local onsuspend = args.onsuspend or function()
-        capi.keygrabber.stop()  
-        awful.spawn.with_shell("systemctl suspend") 
+        capi.keygrabber.stop()
+        awful.spawn.with_shell("systemctl suspend")
+        w.visible = false
     end
     local onpoweroff = args.onpoweroff or function() awful.spawn.with_shell("shutdown now") end
 
