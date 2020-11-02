@@ -101,7 +101,7 @@ local cycle_prev   = true -- cycle trough all previous client or just the first 
 local editor       = os.getenv("EDITOR") or "vim"
 local gui_editor   = os.getenv("GUI_EDITOR") or "atom"
 local browser      = os.getenv("BROWSER") or "firefox"
-local explorer     = "nautilus"
+local explorer     = "thunar"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
@@ -206,7 +206,7 @@ local myawesomemenu = {
     { "restart", awesome.restart },
     { "logout menu", function()
                         awful.util.mymainmenu:hide()
-                        awful.key.execute({modkey}, "l")
+                        awful.key.execute({modkey, altkey}, "l")
                       end },
     { "quit", function() awesome.quit() end }
 }
@@ -269,7 +269,7 @@ globalkeys = my_table.join(
     -- xkill
     awful.key({"Control"}, "Escape", function () awful.spawn.with_shell("xkill") end,
               {description = "xkill", group = "launcher"}),
-    awful.key({ modkey }, "l", function() logout.launch{} end,
+    awful.key({ modkey, altkey}, "l", function() logout.launch{} end,
               {description = "Show logout screen", group = "launcher"}),
     -- cmus control
     --

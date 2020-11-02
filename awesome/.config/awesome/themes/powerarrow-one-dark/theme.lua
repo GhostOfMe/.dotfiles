@@ -296,7 +296,7 @@ local net = lain.widget.net({
 -- Separators
 local spr     = wibox.widget.textbox(' ')
 local arrl_ll = separators.arrow_left(theme.bg_focus, theme.bg_focus, theme.bg_normal)
-local arrl_ld = separators.arrow_left(theme.bg_normal, theme.bg_focus, theme.bg_normal)
+local arrl_ld = separators.arrow_left(theme.bg_normal, theme.bg_focus,theme.bg_normal)
 
 
 
@@ -352,18 +352,19 @@ function theme.at_screen_connect(s)
         screen  = s,
         filter  = awful.widget.taglist.filter.all,
         style   = {
-        shape = function(cr, width, height)
-    	   gears.shape.powerline (cr, width, height, 10)
-    	end
+            shape = function(cr, width, height)
+    	        gears.shape.powerline (cr, width, height, 10)
+    	    end
         },
         layout   = {
-            spacing = -6,
+            spacing = -8,
             spacing_widget = {
                 shape = function(cr, width, height)
-    	        gears.shape.powerline (cr, 0, height, 18)
-    	    end,
+    	             gears.shape.powerline (cr, 0, height, 18)
+    	          end,
             },
-            layout  = wibox.layout.fixed.horizontal
+        forced_width = 192,
+        layout  = wibox.layout.fixed.horizontal
         },
         widget_template = {
             {
@@ -403,45 +404,40 @@ function theme.at_screen_connect(s)
         fg = theme.fg_normal
     })
     -- Right widget setup
-    widget_list = {
+    local widget_list = {
         {volicon, theme.volume.widget},
         {memicon, mem.widget},
         {cpuicon, cpu.widget},
         {tempicon, temp.widget},
         {neticon, net.widget},
         {spr, theme.kbdcfg.widget, spr},
-        {clock},
+        {clock, spr, spr},
         {s.mylayoutbox}
     }
 
-    powerline_colors = {
---      theme.bg_normal,
-       theme.bg_focus
+    local powerline_colors = {
+        theme.bg_focus,
+--      theme.border_normal,
+--      theme.green,
+--      theme.blue/
     }
 
-    local separators = {
-        arrl_ll,n
-    }
-    right_widgets = {}
+    local right_widgets = {}
     for i = 1,#widget_list,1
         do
-            color = powerline_colors[(i % #powerline_colors) + 1]
-
+            color_n = powerline_colors[(i % #powerline_colors) + 1]
             if ( i > 1 )
-            then
-              color_prev = powerline_colors[((i-1) % #powerline_colors) + 1]
-              table.insert(right_widgets, separators[((i-1) % #separators) + 1])
-            else
-              color_prev = theme.bg_normal
-              table.insert(right_widgets, arrl_ld)
+            then color_p = powerline_colors[((i-1) % #powerline_colors) + 1]
+            else color_p = theme.bg_normal
             end
-
+            local sep = separators.arrow_left(color_p, color_n, theme.bg_normal)
+            table.insert(right_widgets, sep)
             for j = 1,#widget_list[i],1
                 do
                     local w = widget_list[i][j]
                     table.insert(
                         right_widgets,
-                        wibox.container.background(w, color)
+                        wibox.container.background(w, color_n)
                     )
                 end
         end
@@ -454,21 +450,12 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             spr,
             s.mytaglist,
-            arrr_dd,
-            spr,
-            spr,
-            spr,
-            spr,
-            spr,
-            spr,
-            spr,
-            spr,
             s.mypromptbox,
-
         },
     --:    s.mytasklist, -- Middle widget
           spr,
         { -- Right widgets
+            spacing = -0.5,
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
             unpack(right_widgets)
