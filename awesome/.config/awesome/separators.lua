@@ -119,7 +119,6 @@ function separators.arrow_left(col1, col2, col3)
             cr:line_to(0, height/2)
             cr:line_to(width, height)
             cr:close_path()
-
             cr:set_source_rgb(gears.color.parse_color(widget.col2))
             cr:fill()
         end
@@ -127,8 +126,8 @@ function separators.arrow_left(col1, col2, col3)
         if widget.col3 ~= "alpha" then
             cr:new_path()
             cr:set_source_rgb(gears.color.parse_color(col3))
-            cr:set_line_width(2)
-            cr:move_to(width/2 + 4, 0-2)
+            cr:set_line_width(1)
+            cr:move_to(width/2 + 5, 0-2)
             cr:line_to(0, height/2)
             cr:line_to(width/2 + 4, height+2)
             cr:stroke()

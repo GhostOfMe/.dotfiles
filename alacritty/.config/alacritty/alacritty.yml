@@ -76,7 +76,8 @@ colors:
   #   `- { index: 16, color: '0xff00ff' }`
   #
   indexed_colors: []
-background_opacity: 0.2
+
+background_opacity: 0.1
 background_blur: true
 # Visual Bell
 # ...

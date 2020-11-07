@@ -423,7 +423,7 @@ function theme.at_screen_connect(s)
     }
 
     local right_widgets = {}
-    for i = 1,#widget_list,1
+      for i = 1,#widget_list,1
         do
             color_n = powerline_colors[(i % #powerline_colors) + 1]
             if ( i > 1 )

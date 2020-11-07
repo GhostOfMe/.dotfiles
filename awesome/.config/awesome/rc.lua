@@ -203,6 +203,7 @@ local myawesomemenu = {
     { "hotkeys", function() return false, hotkeys_popup.show_help end },
     { "manual", terminal .. " -e man awesome" },
     { "edit config", string.format("%s -e %s %s", terminal, editor, awesome.confeffile) },
+
     { "restart", awesome.restart },
     { "logout menu", function()
                         awful.util.mymainmenu:hide()
@@ -266,6 +267,9 @@ root.buttons(my_table.join(
 
 -- {{{ Key bindings
 globalkeys = my_table.join(
+    --picom
+    
+    awful.key({modkey}, "p", function () awful.spawn.with_shell("~/.config/awesome/picom_toggle.sh") end ),
     -- xkill
     awful.key({"Control"}, "Escape", function () awful.spawn.with_shell("xkill") end,
               {description = "xkill", group = "launcher"}),
