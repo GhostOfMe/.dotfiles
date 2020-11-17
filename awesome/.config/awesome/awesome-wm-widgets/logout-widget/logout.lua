@@ -25,8 +25,9 @@ local w = wibox {
     ontop = true,
     height = 200,
     width = 400,
+    border_width = 2,
     shape = function(cr, width, height)
-        gears.shape.rounded_rect(cr, width, height, 8)
+        gears.shape.rounded_rect(cr, width, height, 1)
     end
 }
 
@@ -63,6 +64,7 @@ local function launch(args)
     local bg_color = args.bg_color or beautiful.bg_normal
     local accent_color = args.accent_color or beautiful.bg_focus
     local text_color = args.text_color or beautiful.fg_normal
+    local border_color = args.text_color or beautiful.border_focus
     local phrases = args.phrases or {'Goodbye!'}
     local icon_size = args.icon_size or 40
     local icon_margin = args.icon_margin or 16
@@ -81,6 +83,7 @@ local function launch(args)
     local onpoweroff = args.onpoweroff or function() awful.spawn.with_shell("shutdown now") end
 
     w:set_bg(bg_color)
+    w.border_color = border_color
     if #phrases > 0 then
         phrase_widget:set_markup('<span color="'.. text_color .. '" size="20000">' .. phrases[ math.random( #phrases ) ] .. '</span>')
     end

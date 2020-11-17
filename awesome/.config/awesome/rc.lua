@@ -105,7 +105,8 @@ local explorer     = "thunar"
 local scrlocker    = "slock"
 
 awful.util.terminal = terminal
-awful.util.tagnames = { "➀", "➁", "➂", "➃", "➄" }
+--awful.util.tagnames = { "➀", "➁", "➂", "➃", "➄" }
+awful.util.tagnames = { "١", "٢", "٣", "٤", "٥" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
@@ -207,7 +208,7 @@ local myawesomemenu = {
     { "restart", awesome.restart },
     { "logout menu", function()
                         awful.util.mymainmenu:hide()
-                        awful.key.execute({modkey, altkey}, "l")
+                        awful.key.execute({modkey, altkey}, "g")
                       end },
     { "quit", function() awesome.quit() end }
 }
@@ -273,7 +274,7 @@ globalkeys = my_table.join(
     -- xkill
     awful.key({"Control"}, "Escape", function () awful.spawn.with_shell("xkill") end,
               {description = "xkill", group = "launcher"}),
-    awful.key({ modkey, altkey}, "l", function() logout.launch{} end,
+    awful.key({ modkey, altkey}, "g", function() logout.launch{} end,
               {description = "Show logout screen", group = "launcher"}),
     -- cmus control
     --
@@ -295,7 +296,7 @@ globalkeys = my_table.join(
     -- https://github.com/lcpz/dots/blob/master/bin/screenshot
 --    awful.key({ altkey }, "p", function() os.execute("screenshot") end,
     awful.key({ altkey }, "p", function() awful.spawn.with_shell("gnome-screenshot -i") end,
-              {description = "take a screenshot", group = "hotkeys"}),
+              {description = "take a screenshot", group = "launcher"}),
 
     -- X screen locker
     awful.key({ altkey, "Control" }, "l", function () os.execute(scrlocker) end,
