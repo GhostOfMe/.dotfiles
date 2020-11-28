@@ -459,7 +459,8 @@ function theme.at_screen_connect(s)
             spacing = -0.5,
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            unpack(right_widgets)
+            table.unpack(right_widgets)
+
         },
     }
 end
