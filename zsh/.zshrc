@@ -104,3 +104,15 @@ source $ZSH/oh-my-zsh.sh
 # Initializing mod by lolilolicon from Archlinux
 
 #/opt/color-scripts/ghosts 
+export PATH=~/.local/lib:$PATH
+export PATH=/opt:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
+
+RUST_SRC_PATH="/home/user/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
+export RUST_SRC_PATH
+
+eval "$(starship init zsh)"
+
+alias ls="exa --group-directories-first" 
+alias cat="bat"
+alias r34="~/Work/python/r34_downloader/r34_downloader/r34_downloader/cli.py" 
