@@ -5,9 +5,9 @@ function run {
   fi
 }
 
-run "urxvtd"
+#run "urxvtd"
 
-run "picom -b --config  $HOME/.config/picom/picom.sample.conf --experimental-backends"
+#run "picom -b --config  $HOME/.config/picom/picom.sample.conf --experimental-backends"
 
 run "redshift"
 #run "nitrogen --restore"

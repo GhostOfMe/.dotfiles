@@ -269,15 +269,15 @@ root.buttons(my_table.join(
 -- {{{ Key bindings
 globalkeys = my_table.join(
     --picom
-    
-    awful.key({modkey}, "p", function () awful.spawn.with_shell("~/.config/awesome/picom_toggle.sh") end ),
+    awful.key({modkey}, "p", function () awful.spawn.with_shell("~/.config/awesome/picom_toggle.sh") end,
+              {description = "picom toggle", group = "launcher"}),
     -- xkill
     awful.key({"Control"}, "Escape", function () awful.spawn.with_shell("xkill") end,
               {description = "xkill", group = "launcher"}),
     awful.key({ modkey, altkey}, "g", function() logout.launch{} end,
               {description = "Show logout screen", group = "launcher"}),
+
     -- cmus control
-    --
     awful.key({ }, "XF86AudioPlay",        function () awful.util.spawn("cmus-remote --pause") end),
     awful.key({ }, "XF86AudioNext",        function () awful.util.spawn("cmus-remote --next") end),
     awful.key({ }, "XF86AudioPrev",        function () awful.util.spawn("cmus-remote --prev") end),
