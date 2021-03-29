@@ -103,7 +103,7 @@ source $ZSH/oh-my-zsh.sh
 # Source: http://crunchbang.org/forums/viewtopic.php?pid=157979#p157979
 # Initializing mod by lolilolicon from Archlinux
 
-#/opt/color-scripts/ghosts 
+#/opt/color-scripts/ghosts
 export PATH=~/.local/lib:$PATH
 export PATH=/opt:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
@@ -113,6 +113,7 @@ export RUST_SRC_PATH
 
 eval "$(starship init zsh)"
 
-alias ls="exa --group-directories-first" 
+alias ls="exa --group-directories-first"
 alias cat="bat"
-alias r34="~/Work/python/r34_downloader/r34_downloader/r34_downloader/cli.py" 
+alias r34="~/Work/python/r34_downloader/r34_downloader/r34_downloader/cli.py"
+alias open='xdg-open '

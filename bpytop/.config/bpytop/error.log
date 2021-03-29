@@ -1,0 +1,26 @@
+26/03/21 (22:38:10) | WARNING: No theme named "one-dark" found!
+26/03/21 (22:41:28) | WARNING: No theme named "one dark" found!
+26/03/21 (22:41:48) | WARNING: No theme named "one-dark" found!
+26/03/21 (22:42:33) | WARNING: No theme named "+one_dark" found!
+26/03/21 (22:43:26) | WARNING: No theme named "+one dark" found!
+26/03/21 (22:44:47) | WARNING: No theme named "+one" found!
+26/03/21 (22:45:06) | WARNING: No theme named "+one.theme" found!
+26/03/21 (22:48:53) | WARNING: No theme named "one.theme" found!
+26/03/21 (22:49:33) | WARNING: No theme named "+one" found!
+26/03/21 (22:49:54) | WARNING: No theme named "one" found!
+26/03/21 (23:33:10) | ERROR: invalid literal for int() with base 10: 'ffffff'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1130, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'ffffff'
+26/03/21 (23:33:12) | ERROR: 'Color' object has no attribute 'dec'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 5534, in main
+    THEME = Theme(CONFIG.color_theme)
+  File "/usr/bin/bpytop", line 1255, in __init__
+    self._load_theme(theme)
+  File "/usr/bin/bpytop", line 1301, in _load_theme
+    rgb = { "start" : getattr(self, f'{name}_start').dec, "mid" : getattr(self, f'{name}_mid').dec, "end" : getattr(self, f'{name}_end').dec }
+AttributeError: 'Color' object has no attribute 'dec'
+26/03/21 (23:33:12) | WARNING: Exiting with errorcode (1). Runtime 0:00:02 
+
