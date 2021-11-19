@@ -128,7 +128,6 @@ eval "$(starship init zsh)"
 
 alias ls="exa --group-directories-first"
 alias cat="bat"
-alias r34="~/Work/python/r34_downloader/r34_downloader/r34_downloader/cli.py"
 alias parrot="/home/user/Work/python/smart_parrot/smart_parrot/smart_parrot.py"
 alias open='xdg-open'
 alias update='doas dnf update -y'
