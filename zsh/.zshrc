@@ -131,6 +131,9 @@ alias cat="bat"
 alias parrot="/home/user/Work/python/smart_parrot/smart_parrot/smart_parrot.py"
 alias open='xdg-open'
 alias update='doas dnf update -y'
+alias anki='flatpak run net.ankiweb.Anki'
+alias vim='nvim'
 xmodmap -e "pointer = 0 2 3 4 5 6 7 8 1 10"
+# xinput set-button-map 9 0 3 4 5 6 7 8 1 10
 setxkbmap -option compose:ralt
 parrot

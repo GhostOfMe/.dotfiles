@@ -106,7 +106,7 @@ local scrlocker    = "slock"
 
 awful.util.terminal = terminal
 --awful.util.tagnames = { "➀", "➁", "➂", "➃", "➄" }
-awful.util.tagnames = { "١", "٢", "٣", "٤", "٥" }
+awful.util.tagnames = { "I", "II", "III", "IV", "V" }
 awful.layout.layouts = {
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
