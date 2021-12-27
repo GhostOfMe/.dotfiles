@@ -114,6 +114,7 @@ prompt_context() {
 export PATH=~/.local/lib:$PATH
 export PATH=/opt:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/home/user/.local/bin:$PATH"
 
 RUST_SRC_PATH="/home/user/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 export RUST_SRC_PATH
@@ -133,6 +134,9 @@ alias open='xdg-open'
 alias update='doas dnf update -y'
 alias anki='flatpak run net.ankiweb.Anki'
 alias vim='nvim'
+alias colorscripts="/opt/shell-color-scripts/colorscript.sh"
+alias digital_rain="digital_rain --color=#98c379"
+
 xmodmap -e "pointer = 0 2 3 4 5 6 7 8 1 10"
 # xinput set-button-map 9 0 3 4 5 6 7 8 1 10
 setxkbmap -option compose:ralt

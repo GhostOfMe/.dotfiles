@@ -5,6 +5,8 @@
 
 --]]
 
+local scheme = require("color_schemes.one_dark")
+
 local kbdcfg = require("keyboard_layout").kbdcfg
 local gears  = require("gears")
 local lain   = require("lain")
@@ -20,30 +22,30 @@ theme.dir                                       = os.getenv("HOME") .. "/.config
 theme.wallpaper                                 = theme.dir .. "/wall_1.jpg"
 theme.font                                      = "monospace 10"
 theme.taglist_font                              = "Fira Code 10"
-theme.fg_normal                                 = "#ABB2BF"
-theme.fg_focus                                  = "#E06C75"
-theme.blue                                      = "#61aFEF"
-theme.green                                     = "#98c379"
-theme.fg_urgent                                 = "#f1fa8c"
-theme.bg_normal                                 = "#18191b"
-theme.bg_focus                                  = "#282c38"
-theme.bg_urgent                                 = "#1A1A1A"
+theme.fg_normal                                 = scheme.fg_normal
+theme.fg_focus                                  = scheme.fg_focus
+theme.blue                                      = scheme.blue
+theme.green                                     = scheme.green
+theme.fg_urgent                                 = scheme.fg_urgent
+theme.bg_normal                                 = scheme.bg_normal
+theme.bg_focus                                  = scheme.bg_focus
+theme.bg_urgent                                 = scheme.bg_urgent
 theme.border_width                              = dpi(2)
-theme.border_normal                             = "#455663"
-theme.border_focus                              = "#61afef"
-theme.border_marked                             = "#CC9393"
-theme.tasklist_bg_focus                         = "#1A1A1A"
-theme.taglist_bg_focus                          = theme.blue
-theme.taglist_fg_focus                          = theme.bg_normal
-theme.taglist_bg_empty                          = theme.bg_normal
-theme.taglist_fg_empty                          = "#6b6d7f"
-theme.taglist_fg_urgent                         = theme.bg_normal
-theme.taglist_bg_urgent                         = theme.green
-theme.taglist_bg_occupied                       = theme.bg_focus
-theme.titlebar_bg_focus                         = theme.bg_focus
-theme.titlebar_bg_normal                        = theme.bg_normal
-theme.titlebar_fg_focus                         = theme.fg_focus
-theme.wibar_border_color                        = theme.border_focus
+theme.border_normal                             = scheme.border_normal
+theme.border_focus                              = scheme.border_focus
+theme.border_marked                             = scheme.border_marked
+theme.tasklist_bg_focus                         = scheme.tasklist_bg_focus
+theme.taglist_bg_focus                          = scheme.taglist_bg_focus
+theme.taglist_fg_focus                          = scheme.taglist_fg_focus
+theme.taglist_bg_empty                          = scheme.taglist_bg_empty
+theme.taglist_fg_empty                          = scheme.taglist_fg_empty
+theme.taglist_fg_urgent                         = scheme.taglist_fg_urgent
+theme.taglist_bg_urgent                         = scheme.taglist_bg_urgent
+theme.taglist_bg_occupied                       = scheme.taglist_bg_occupied
+theme.titlebar_bg_focus                         = scheme.titlebar_bg_focus
+theme.titlebar_bg_normal                        = scheme.tittlebar_bg_normal
+theme.titlebar_fg_focus                         = scheme.tittlebar_fg_focus
+theme.wibar_border_color                        = scheme.wibar_border_color
 theme.menu_height                               = dpi(16)
 theme.menu_width                                = dpi(140)
 theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
@@ -104,6 +106,7 @@ local markup     = lain.util.markup
 local separators = require("separators")
 
 -- Keyboard layout widget
+
 theme.kbdcfg = kbdcfg({type = "gui"})
 theme.kbdcfg.add_primary_layout("English", theme.keyboard_us, "us")
 theme.kbdcfg.add_primary_layout("Русский", theme.keyboard_ru, "ru")
@@ -194,6 +197,7 @@ theme.mpd = lain.widget.mpd({
     end
 })
 ]]--
+
 -- MEM
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 memicon.opacity = 0.7
@@ -255,6 +259,7 @@ local bat = lain.widget.bat({
     end
 })
 --]]
+
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.alsa({
@@ -298,7 +303,6 @@ local net = lain.widget.net({
 local spr     = wibox.widget.textbox(' ')
 local arrl_ll = separators.arrow_left(theme.bg_focus, theme.bg_focus, theme.bg_normal)
 local arrl_ld = separators.arrow_left(theme.bg_normal, theme.bg_focus,theme.bg_normal)
-
 
 
 function theme.at_screen_connect(s)
@@ -364,7 +368,8 @@ function theme.at_screen_connect(s)
     	             gears.shape.powerline (cr, 0, height, 18)
     	          end,
             },
-        forced_width = 192,
+        forced_width = 512,
+
         layout  = wibox.layout.fixed.horizontal
         },
         widget_template = {
