@@ -88,8 +88,12 @@ function kbdcfg.bind()
 
     if kbdcfg.type == "tui" then
         kbdcfg.widget = wibox.widget.textbox()
+        --kbdcfg.widget.forced_height = 16
+        --kbdcfg.widget.forced_width = 16
     else
         kbdcfg.widget = wibox.widget.imagebox()
+        --kbdcfg.widget.forced_height = 16
+        --kbdcfg.widget.forced_width = 16
     end
 
     if kbdcfg.default_layout_index > #kbdcfg.layouts then

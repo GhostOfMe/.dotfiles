@@ -1,9 +1,10 @@
 --[[
 
-     Multicolor Awesome WM theme 2.0
-     github.com/lcpz
+     Nord Awesome WM theme
 
 --]]
+
+local kbdcfg = require("keyboard_layout").kbdcfg
 
 local gears = require("gears")
 local lain  = require("lain")
@@ -17,14 +18,14 @@ local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
-theme.font                                      = "Terminus 8"
-theme.menu_bg_normal                            = "#000000"
-theme.menu_bg_focus                             = "#000000"
-theme.bg_normal                                 = "#000000"
-theme.bg_focus                                  = "#000000"
-theme.bg_urgent                                 = "#000000"
-theme.fg_normal                                 = "#aaaaaa"
-theme.fg_focus                                  = "#ff8c00"
+theme.font                                      = "monospace 10"
+theme.menu_bg_normal                            = "#2e3440"
+theme.menu_bg_focus                             = "#3b4252"
+theme.bg_normal                                 = "#2e3440"
+theme.bg_focus                                  = "#4c566a"
+theme.bg_urgent                                 = "#434c5e"
+theme.fg_normal                                 = "#d8dee9"
+theme.fg_focus                                  = "#88c0d0"
 theme.fg_urgent                                 = "#af1d18"
 theme.fg_minimize                               = "#ffffff"
 theme.border_width                              = dpi(1)
@@ -38,22 +39,28 @@ theme.menu_fg_normal                            = "#aaaaaa"
 theme.menu_fg_focus                             = "#ff8c00"
 theme.menu_bg_normal                            = "#050505dd"
 theme.menu_bg_focus                             = "#050505dd"
-theme.widget_temp                               = theme.confdir .. "/icons/temp.png"
+theme.widget_temp                               = gears.color.recolor_image(theme.confdir .. "/icons/temp.png", theme.bg_normal)
 theme.widget_uptime                             = theme.confdir .. "/icons/ac.png"
-theme.widget_cpu                                = theme.confdir .. "/icons/cpu.png"
-theme.widget_weather                            = theme.confdir .. "/icons/dish.png"
+theme.widget_cpu                                = gears.color.recolor_image(theme.confdir .. "/icons/cpu.png", theme.bg_normal)
+theme.widget_weather                            = gears.color.recolor_image(theme.confdir .. "/icons/dish.png", theme.bg_normal)
 theme.widget_fs                                 = theme.confdir .. "/icons/fs.png"
-theme.widget_mem                                = theme.confdir .. "/icons/mem.png"
+theme.widget_mem                                = gears.color.recolor_image(theme.confdir .. "/icons/mem.png", theme.bg_normal)
 theme.widget_note                               = theme.confdir .. "/icons/note.png"
 theme.widget_note_on                            = theme.confdir .. "/icons/note_on.png"
-theme.widget_netdown                            = theme.confdir .. "/icons/net_down.png"
-theme.widget_netup                              = theme.confdir .. "/icons/net_up.png"
+theme.widget_netdown                            = gears.color.recolor_image(theme.confdir .. "/icons/net_down.png", theme.bg_normal)
+theme.widget_netup                              = gears.color.recolor_image(theme.confdir .. "/icons/net_up.png", theme.bg_normal)
 theme.widget_mail                               = theme.confdir .. "/icons/mail.png"
 theme.widget_batt                               = theme.confdir .. "/icons/bat.png"
-theme.widget_clock                              = theme.confdir .. "/icons/clock.png"
-theme.widget_vol                                = theme.confdir .. "/icons/spkr.png"
-theme.taglist_squares_sel                       = theme.confdir .. "/icons/square_a.png"
-theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
+theme.widget_clock                              = gears.color.recolor_image(theme.confdir .. "/icons/clock.png", theme.bg_normal)
+theme.widget_vol                                = gears.color.recolor_image(theme.confdir .. "/icons/spkr.png", theme.bg_normal)
+--theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
+theme.taglist_bg_focus                          = theme.bg_focus
+theme.taglist_fg_focus                          = theme.fg_normal
+theme.taglist_bg_empty                          = theme.bg_normal
+theme.taglist_fg_empty                          = "#4c566a"
+theme.taglist_fg_urgent                         = theme.fg_normal
+theme.taglist_bg_urgent                         = theme.bg_normal
+theme.taglist_bg_occupied                       = theme.bg_normal
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = 0
@@ -91,19 +98,37 @@ theme.titlebar_maximized_button_focus_inactive  = theme.confdir .. "/icons/title
 theme.titlebar_maximized_button_normal_active   = theme.confdir .. "/icons/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_active    = theme.confdir .. "/icons/titlebar/maximized_focus_active.png"
 
+theme.keyboard_us                               = theme.confdir .. "/icons/united-states.png"
+theme.keyboard_ru                               = theme.confdir .. "/icons/russia.png"
+
 local markup = lain.util.markup
+
+-- Keyboard layout widget
+
+theme.kbdcfg = kbdcfg({type = "tui"})
+theme.kbdcfg.add_primary_layout("English", "US", "US")
+theme.kbdcfg.add_primary_layout("Русский", "RU", "RU")
+theme.kbdcfg.bind()
+
+-- Mouse bindings
+kbdcfg.widget:buttons(
+awful.util.table.join(
+    awful.button({ }, 1, function () kbdcfg.switch_next() end)
+    --, awful.button({ }, 3, function () theme.kbdcfg.menu:toggle() end)
+  )
+)
 
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup("#7788af", "%A %d %B ") .. markup("#ab7367", ">") .. markup("#de5e1e", " %H:%M "))
+local mytextclock = wibox.widget.textclock(markup(theme.bg_normal, "%a %d %b ") .. markup(theme.bg_normal, "|") .. markup(theme.bg_normal, " %H:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
 theme.cal = lain.widget.cal({
     attach_to = { mytextclock },
     notification_preset = {
-        font = "Terminus 10",
+        font = "Fira Code 10",
         fg   = theme.fg_normal,
         bg   = theme.bg_normal
     }
@@ -112,55 +137,24 @@ theme.cal = lain.widget.cal({
 -- Weather
 local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
-    city_id = 2643743, -- placeholder (London)
+    city_id = 490068,
     notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
-    weather_na_markup = markup.fontfg(theme.font, "#eca4c4", "N/A "),
+    weather_na_markup = markup.fontfg(theme.font, theme.bg_normal, "N/A "),
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(theme.font, "#eca4c4", descr .. " @ " .. units .. "°C "))
+        --widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, descr .. " @ " .. units .. "°C "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, units .. "°C "))
+
     end
 })
 
--- / fs
---[[ commented because it needs Gio/Glib >= 2.54
-local fsicon = wibox.widget.imagebox(theme.widget_fs)
-theme.fs = lain.widget.fs({
-    notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
-    settings  = function()
-        widget:set_markup(markup.fontfg(theme.font, "#80d9d8", string.format("%.1f", fs_now["/"].used) .. "% "))
-    end
-})
---]]
-
--- Mail IMAP check
---[[ commented because it needs to be set before use
-local mailicon = wibox.widget.imagebox()
-theme.mail = lain.widget.imap({
-    timeout  = 180,
-    server   = "server",
-    mail     = "mail",
-    password = "keyring get mail",
-    settings = function()
-        if mailcount > 0 then
-            mailicon:set_image(theme.widget_mail)
-            widget:set_markup(markup.fontfg(theme.font, "#cccccc", mailcount .. " "))
-        else
-            widget:set_text("")
-            --mailicon:set_image() -- not working in 4.0
-            mailicon._private.image = nil
-            mailicon:emit_signal("widget::redraw_needed")
-            mailicon:emit_signal("widget::layout_changed")
-        end
-    end
-})
---]]
 
 -- CPU
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#e33a6e", cpu_now.usage .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, cpu_now.usage .. "% "))
     end
 })
 
@@ -168,7 +162,7 @@ local cpu = lain.widget.cpu({
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#f1af5f", coretemp_now .. "°C "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, coretemp_now .. "°C "))
     end
 })
 
@@ -194,7 +188,7 @@ theme.volume = lain.widget.alsa({
             volume_now.level = volume_now.level .. "M"
         end
 
-        widget:set_markup(markup.fontfg(theme.font, "#7493d2", volume_now.level .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, volume_now.level .. "% "))
     end
 })
 
@@ -210,8 +204,8 @@ local netupinfo = lain.widget.net({
             theme.weather.update()
         end
 
-        widget:set_markup(markup.fontfg(theme.font, "#e54c62", net_now.sent .. " "))
-        netdowninfo:set_markup(markup.fontfg(theme.font, "#87af5f", net_now.received .. " "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%06.1f", net_now.sent) .. " "))
+        netdowninfo:set_markup(markup.fontfg(theme.font, theme.bg_normal,string.format("%06.1f", net_now.received) .. " "))
     end
 })
 
@@ -219,7 +213,7 @@ local netupinfo = lain.widget.net({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, "#e0da37", mem_now.used .. "M "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, mem_now.used .. "M "))
     end
 })
 
@@ -262,8 +256,36 @@ function theme.at_screen_connect(s)
     end
     gears.wallpaper.maximized(wallpaper, s, true)
 
+
+
     -- Tags
-    awful.tag(awful.util.tagnames, s, awful.layout.layouts)
+    --awful.tag(awful.util.tagnames, s, awful.layout.layouts)
+
+
+    -- Tags
+        tag_layouts = {
+                    awful.layout.suit.floating,
+                    awful.layout.suit.floating,
+                    awful.layout.suit.tile,
+                    awful.layout.suit.tile,
+                    awful.layout.suit.tile,
+        }
+        awful.tag.add(awful.util.tagnames[1], {
+                    layout             = tag_layouts[1],
+                    gap_single_client  = true,
+                    screen             = s,
+                    selected           = true,
+        })
+
+        for i = 2,#awful.util.tagnames,1
+            do
+                awful.tag.add(
+                    awful.util.tagnames[i], {
+                    layout = tag_layouts[i],
+                    screen = s,
+                })
+            end
+
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -290,57 +312,37 @@ function theme.at_screen_connect(s)
         layout = wibox.layout.align.horizontal,
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
-            --s.mylayoutbox,
             s.mytaglist,
             s.mypromptbox,
             mpdicon,
             theme.mpd.widget,
         },
-        --s.mytasklist, -- Middle widget
         nil,
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
-            --mailicon,
-            --theme.mail.widget,
-            netdownicon,
-            netdowninfo,
-            netupicon,
-            netupinfo.widget,
-            volicon,
-            theme.volume.widget,
-            memicon,
-            memory.widget,
-            cpuicon,
-            cpu.widget,
-            --fsicon,
-            --theme.fs.widget,
-            weathericon,
-            theme.weather.widget,
-            tempicon,
-            temp.widget,
-            baticon,
-            bat.widget,
-            clockicon,
-            mytextclock,
+            wibox.container.background(volicon, "#5e81ac"),
+            wibox.container.background(theme.volume.widget, "#5e81ac"),
+            wibox.container.background(netdownicon, "#8fbcbb"),
+            wibox.container.background(netdowninfo, "#8fbcbb"),
+            wibox.container.background(netupicon, "#8fbcbb"),
+            wibox.container.background(netupinfo.widget, "#8fbcbb"),
+            wibox.container.background(memicon, "#ebcb8b"),
+            wibox.container.background(memory.widget, "#ebcb8b"),
+            wibox.container.background(cpuicon, "#d08770"),
+            wibox.container.background(cpu.widget, "#d08770"),
+            wibox.container.background(tempicon, "#bf616a"),
+            wibox.container.background(temp.widget, "#bf616a"),
+            wibox.container.background(weathericon, "#b48ead"),
+            wibox.container.background(theme.weather.widget, "#b48ead"),
+            wibox.container.background(theme.kbdcfg.widget, "#4c566a"),
+            wibox.container.background(clockicon, "#81a1c1"),
+            wibox.container.background(mytextclock, "#81a1c1"),
+            s.mylayoutbox
         },
     }
 
-    -- Create the bottom wibox
-    s.mybottomwibox = awful.wibar({ position = "bottom", screen = s, border_width = 0, height = dpi(20), bg = theme.bg_normal, fg = theme.fg_normal })
 
-    -- Add widgets to the bottom wibox
-    s.mybottomwibox:setup {
-        layout = wibox.layout.align.horizontal,
-        { -- Left widgets
-            layout = wibox.layout.fixed.horizontal,
-        },
-        s.mytasklist, -- Middle widget
-        { -- Right widgets
-            layout = wibox.layout.fixed.horizontal,
-            s.mylayoutbox,
-        },
-    }
 end
 
 return theme

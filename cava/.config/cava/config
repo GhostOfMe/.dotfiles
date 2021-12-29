@@ -21,7 +21,7 @@
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
-  bars = 17
+  bars = 0
   bar_width = 4
 ; bar_spacing = 1
 
@@ -127,8 +127,8 @@ mono_option = average
 
 gradient = 1
 gradient_count = 2
-gradient_color_1  = '#61AEEF'
-gradient_color_2  = '#C678DD'
+gradient_color_1  = '#5e81ac'
+gradient_color_2  = '#8fbcbb'
 ;gradient_color_3  = '#E06C75'
 
 

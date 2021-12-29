@@ -329,8 +329,8 @@ function theme.at_screen_connect(s)
                 awful.layout.suit.tile,
                 awful.layout.suit.tile,
     }
-    awful.tag.add(awful.util.tagnames[1], {
-                layout             = tag_layouts[1],
+    awful.tag.add(awful.util.tagnames[0], {
+                layout             = tag_layouts[0],
                 gap_single_client  = true,
                 screen             = s,
                 selected           = true,
