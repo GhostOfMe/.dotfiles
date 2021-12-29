@@ -1,5 +1,5 @@
 --[[
-    bases upon:
+    based upon:
         github.com/lcpz
         github.com/eaufavor/AwesomeWM-powerarrow-dark/
 
@@ -48,36 +48,36 @@ theme.titlebar_fg_focus                         = scheme.tittlebar_fg_focus
 theme.wibar_border_color                        = scheme.wibar_border_color
 theme.menu_height                               = dpi(16)
 theme.menu_width                                = dpi(140)
-theme.menu_submenu_icon                         = theme.dir .. "/icons/submenu.png"
-theme.layout_tile                               = theme.dir .. "/icons/tile.png"
-theme.layout_tileleft                           = theme.dir .. "/icons/tileleft.png"
-theme.layout_tilebottom                         = theme.dir .. "/icons/tilebottom.png"
-theme.layout_tiletop                            = theme.dir .. "/icons/tiletop.png"
-theme.layout_fairv                              = theme.dir .. "/icons/fairv.png"
-theme.layout_fairh                              = theme.dir .. "/icons/fairh.png"
-theme.layout_spiral                             = theme.dir .. "/icons/spiral.png"
-theme.layout_dwindle                            = theme.dir .. "/icons/dwindle.png"
-theme.layout_max                                = theme.dir .. "/icons/max.png"
-theme.layout_fullscreen                         = theme.dir .. "/icons/fullscreen.png"
-theme.layout_magnifier                          = theme.dir .. "/icons/magnifier.png"
-theme.layout_floating                           = theme.dir .. "/icons/floating.png"
-theme.widget_ac                                 = theme.dir .. "/icons/ac.png"
-theme.widget_battery                            = theme.dir .. "/icons/battery.png"
-theme.widget_battery_low                        = theme.dir .. "/icons/battery_low.png"
-theme.widget_battery_empty                      = theme.dir .. "/icons/battery_empty.png"
-theme.widget_mem                                = theme.dir .. "/icons/mem.png"
-theme.widget_cpu                                = theme.dir .. "/icons/cpu.png"
-theme.widget_temp                               = theme.dir .. "/icons/temp.png"
-theme.widget_net                                = theme.dir .. "/icons/net.png"
-theme.widget_hdd                                = theme.dir .. "/icons/hdd.png"
-theme.widget_music                              = theme.dir .. "/icons/note.png"
-theme.widget_music_on                           = theme.dir .. "/icons/note_on.png"
-theme.widget_vol                                = theme.dir .. "/icons/vol.png"
-theme.widget_vol_low                            = theme.dir .. "/icons/vol_low.png"
-theme.widget_vol_no                             = theme.dir .. "/icons/vol_no.png"
-theme.widget_vol_mute                           = theme.dir .. "/icons/vol_mute.png"
-theme.widget_mail                               = theme.dir .. "/icons/mail.png"
-theme.widget_mail_on                            = theme.dir .. "/icons/mail_on.png"
+theme.menu_submenu_icon                         = gears.color.recolor_image(theme.dir .. "/icons/submenu.png", scheme.fg_normal)
+theme.layout_tile                               = gears.color.recolor_image(theme.dir .. "/icons/tile.png", scheme.fg_normal)
+theme.layout_tileleft                           = gears.color.recolor_image(theme.dir .. "/icons/tileleft.png", scheme.fg_normal)
+theme.layout_tilebottom                         = gears.color.recolor_image(theme.dir .. "/icons/tilebottom.png", scheme.fg_normal)
+theme.layout_tiletop                            = gears.color.recolor_image(theme.dir .. "/icons/tiletop.png", scheme.fg_normal)
+theme.layout_fairv                              = gears.color.recolor_image(theme.dir .. "/icons/fairv.png", scheme.fg_normal)
+theme.layout_fairh                              = gears.color.recolor_image(theme.dir .. "/icons/fairh.png", scheme.fg_normal)
+theme.layout_spiral                             = gears.color.recolor_image(theme.dir .. "/icons/spiral.png", scheme.fg_normal)
+theme.layout_dwindle                            = gears.color.recolor_image(theme.dir .. "/icons/dwindle.png", scheme.fg_normal)
+theme.layout_max                                = gears.color.recolor_image(theme.dir .. "/icons/max.png", scheme.fg_normal)
+theme.layout_fullscreen                         = gears.color.recolor_image(theme.dir .. "/icons/fullscreen.png", scheme.fg_normal)
+theme.layout_magnifier                          = gears.color.recolor_image(theme.dir .. "/icons/magnifier.png", scheme.fg_normal)
+theme.layout_floating                           = gears.color.recolor_image(theme.dir .. "/icons/floating.png", scheme.fg_normal)
+theme.widget_ac                                 = gears.color.recolor_image(theme.dir .. "/icons/ac.png", scheme.fg_normal)
+theme.widget_battery                            = gears.color.recolor_image(theme.dir .. "/icons/battery.png", scheme.fg_normal)
+theme.widget_battery_low                        = gears.color.recolor_image(theme.dir .. "/icons/battery_low.png", scheme.fg_normal)
+theme.widget_battery_empty                      = gears.color.recolor_image(theme.dir .. "/icons/battery_empty.png", scheme.fg_normal)
+theme.widget_mem                                = gears.color.recolor_image(theme.dir .. "/icons/mem.png", scheme.fg_normal)
+theme.widget_cpu                                = gears.color.recolor_image(theme.dir .. "/icons/cpu.png", scheme.fg_normal)
+theme.widget_temp                               = gears.color.recolor_image(theme.dir .. "/icons/temp.png", scheme.fg_normal)
+theme.widget_net                                = gears.color.recolor_image(theme.dir .. "/icons/net.png", scheme.fg_normal)
+theme.widget_hdd                                = gears.color.recolor_image(theme.dir .. "/icons/hdd.png", scheme.fg_normal)
+theme.widget_music                              = gears.color.recolor_image(theme.dir .. "/icons/note.png", scheme.fg_normal)
+theme.widget_music_on                           = gears.color.recolor_image(theme.dir .. "/icons/note_on.png", scheme.fg_normal)
+theme.widget_vol                                = gears.color.recolor_image(theme.dir .. "/icons/vol.png", scheme.fg_normal)
+theme.widget_vol_low                            = gears.color.recolor_image(theme.dir .. "/icons/vol_low.png", scheme.fg_normal)
+theme.widget_vol_no                             = gears.color.recolor_image(theme.dir .. "/icons/vol_no.png", scheme.fg_normal)
+theme.widget_vol_mute                           = gears.color.recolor_image(theme.dir .. "/icons/vol_mute.png", scheme.fg_normal)
+theme.widget_mail                               = gears.color.recolor_image(theme.dir .. "/icons/mail.png", scheme.fg_normal)
+theme.widget_mail_on                            = gears.color.recolor_image(theme.dir .. "/icons/mail_on.png", scheme.fg_normal)
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true theme.useless_gap                               = dpi(0)
 theme.titlebar_close_button_focus               = theme.dir .. "/icons/titlebar/close_focus.png"
@@ -115,8 +115,9 @@ theme.kbdcfg.bind()
 -- Mouse bindings
 theme.kbdcfg.widget:buttons(
 awful.util.table.join(
-    awful.button({ }, 1, function () theme.kbdcfg.switch_next() end),
-    awful.button({ }, 3, function () theme.kbdcfg.menu:toggle() end))
+    awful.button({ }, 1, function () theme.kbdcfg.switch_next() end)
+    --, awful.button({ }, 3, function () theme.kbdcfg.menu:toggle() end)
+  )
 )
 
 -- Textclock
@@ -199,8 +200,9 @@ theme.mpd = lain.widget.mpd({
 ]]--
 
 -- MEM
+
 local memicon = wibox.widget.imagebox(theme.widget_mem)
-memicon.opacity = 0.7
+--memicon.opacity = 0.7
 local mem = lain.widget.mem({
     settings = function()
         widget:set_markup(markup.font(theme.font, " " .. mem_now.used .. "MB "))
@@ -209,7 +211,7 @@ local mem = lain.widget.mem({
 
 -- CPU
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
-cpuicon.opacity = 0.7
+--cpuicon.opacity = 0.7
 local cpu = lain.widget.cpu({
     settings = function()
         widget:set_markup(markup.font(
@@ -218,6 +220,7 @@ local cpu = lain.widget.cpu({
 })
 
 -- Coretemp
+
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
     settings = function()
@@ -261,6 +264,7 @@ local bat = lain.widget.bat({
 --]]
 
 -- ALSA volume
+
 local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.alsa({
     settings = function()
@@ -303,6 +307,7 @@ local net = lain.widget.net({
 local spr     = wibox.widget.textbox(' ')
 local arrl_ll = separators.arrow_left(theme.bg_focus, theme.bg_focus, theme.bg_normal)
 local arrl_ld = separators.arrow_left(theme.bg_normal, theme.bg_focus,theme.bg_normal)
+
 
 
 function theme.at_screen_connect(s)
