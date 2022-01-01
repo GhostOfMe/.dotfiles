@@ -19,8 +19,8 @@ local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
 theme.font                                      = "monospace 10"
-theme.menu_bg_normal                            = "#2e3440"
-theme.menu_bg_focus                             = "#3b4252"
+--theme.menu_bg_normal                            = "#2e3440"
+--theme.menu_bg_focus                             = "#3b4252"
 theme.bg_normal                                 = "#2e3440"
 theme.bg_focus                                  = "#4c566a"
 theme.bg_urgent                                 = "#434c5e"
@@ -35,10 +35,10 @@ theme.border_marked                             = "#3ca4d8"
 theme.menu_border_width                         = 0
 theme.menu_width                                = dpi(130)
 theme.menu_submenu_icon                         = theme.confdir .. "/icons/submenu.png"
-theme.menu_fg_normal                            = "#aaaaaa"
-theme.menu_fg_focus                             = "#ff8c00"
-theme.menu_bg_normal                            = "#050505dd"
-theme.menu_bg_focus                             = "#050505dd"
+theme.menu_fg_normal                            = "#434c5e"
+theme.menu_fg_focus                             = "#4c566a"
+theme.menu_bg_normal                            = "#d8dee9"
+theme.menu_bg_focus                             = "#e5e9f0"
 theme.widget_temp                               = gears.color.recolor_image(theme.confdir .. "/icons/temp.png", theme.bg_normal)
 theme.widget_uptime                             = theme.confdir .. "/icons/ac.png"
 theme.widget_cpu                                = gears.color.recolor_image(theme.confdir .. "/icons/cpu.png", theme.bg_normal)
@@ -106,8 +106,8 @@ local markup = lain.util.markup
 -- Keyboard layout widget
 
 theme.kbdcfg = kbdcfg({type = "tui"})
-theme.kbdcfg.add_primary_layout("English", "US", "US")
-theme.kbdcfg.add_primary_layout("Русский", "RU", "RU")
+theme.kbdcfg.add_primary_layout("English", "US", "us")
+theme.kbdcfg.add_primary_layout("Русский", "RU", "ru")
 theme.kbdcfg.bind()
 
 -- Mouse bindings
@@ -191,6 +191,17 @@ theme.volume = lain.widget.alsa({
         widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, volume_now.level .. "% "))
     end
 })
+
+theme.volume.widget:buttons(awful.util.table.join(
+                               awful.button({}, 4, function ()
+                                     awful.util.spawn("amixer set Master 1%+")
+                                     theme.volume.update()
+                               end),
+                               awful.button({}, 5, function ()
+                                     awful.util.spawn("amixer set Master 1%-")
+                                     theme.volume.update()
+                               end)
+))
 
 -- Net
 local netdownicon = wibox.widget.imagebox(theme.widget_netdown)
