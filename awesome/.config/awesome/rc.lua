@@ -86,7 +86,7 @@ local themes = {
     "copland",              -- 2
     "dremora",              -- 3
     "holo",                 -- 4
-    "multicolor",           -- 5
+    "nord",                 -- 5
     "powerarrow",           -- 6
     "powerarrow-dark-new",  -- 7
     "powerarrow-one-dark",  -- 8
@@ -847,5 +847,6 @@ end)
 
 --        )
 
+--awful.spawn.with_shell("~/.config/awesome/random_wallpaper.sh")
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
 awful.spawn.with_shell("~/.config/awesome/player.sh")

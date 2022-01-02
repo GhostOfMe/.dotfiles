@@ -16,11 +16,9 @@ local os = os
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 
 local theme                                     = {}
-theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/multicolor"
+theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/nord"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
 theme.font                                      = "monospace 10"
---theme.menu_bg_normal                            = "#2e3440"
---theme.menu_bg_focus                             = "#3b4252"
 theme.bg_normal                                 = "#2e3440"
 theme.bg_focus                                  = "#4c566a"
 theme.bg_urgent                                 = "#434c5e"
@@ -143,7 +141,6 @@ theme.weather = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        --widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, descr .. " @ " .. units .. "°C "))
         widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, units .. "°C "))
 
     end
@@ -166,19 +163,6 @@ local temp = lain.widget.temp({
     end
 })
 
--- Battery
-local baticon = wibox.widget.imagebox(theme.widget_batt)
-local bat = lain.widget.bat({
-    settings = function()
-        local perc = bat_now.perc ~= "N/A" and bat_now.perc .. "%" or bat_now.perc
-
-        if bat_now.ac_status == 1 then
-            perc = perc .. " plug"
-        end
-
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, perc .. " "))
-    end
-})
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
@@ -228,45 +212,20 @@ local memory = lain.widget.mem({
     end
 })
 
--- MPD
-local mpdicon = wibox.widget.imagebox()
-theme.mpd = lain.widget.mpd({
-    settings = function()
-        mpd_notification_preset = {
-            text = string.format("%s [%s] - %s\n%s", mpd_now.artist,
-                   mpd_now.album, mpd_now.date, mpd_now.title)
-        }
-
-        if mpd_now.state == "play" then
-            artist = mpd_now.artist .. " > "
-            title  = mpd_now.title .. " "
-            mpdicon:set_image(theme.widget_note_on)
-        elseif mpd_now.state == "pause" then
-            artist = "mpd "
-            title  = "paused "
-        else
-            artist = ""
-            title  = ""
-            --mpdicon:set_image() -- not working in 4.0
-            mpdicon._private.image = nil
-            mpdicon:emit_signal("widget::redraw_needed")
-            mpdicon:emit_signal("widget::layout_changed")
-        end
-        widget:set_markup(markup.fontfg(theme.font, "#e54c62", artist) .. markup.fontfg(theme.font, "#b2b2b2", title))
-    end
-})
 
 function theme.at_screen_connect(s)
     -- Quake application
     s.quake = lain.util.quake({ app = awful.util.terminal })
 
     -- If wallpaper is a function, call it with the screen
+--[[
     local wallpaper = theme.wallpaper
+
     if type(wallpaper) == "function" then
         wallpaper = wallpaper(s)
     end
     gears.wallpaper.maximized(wallpaper, s, true)
-
+--]]
 
 
     -- Tags
@@ -325,8 +284,6 @@ function theme.at_screen_connect(s)
             layout = wibox.layout.fixed.horizontal,
             s.mytaglist,
             s.mypromptbox,
-            mpdicon,
-            theme.mpd.widget,
         },
         nil,
         { -- Right widgets
