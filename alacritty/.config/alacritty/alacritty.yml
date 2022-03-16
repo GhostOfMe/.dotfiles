@@ -51,7 +51,7 @@ colors:
     white: '#aeb3bb'
 
 
-background_opacity: 0.7
+window.opacity: 0.7
 background_blur: true
 # Visual Bell
 # ...

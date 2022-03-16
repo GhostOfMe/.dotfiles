@@ -1,7 +1,8 @@
 --[[
-
-     Nord Awesome WM theme
-
+     ▙ ▌▞▀▖▛▀▖▛▀▖
+     ▌▌▌▌ ▌▙▄▘▌ ▌
+     ▌▝▌▌ ▌▌▚ ▌ ▌
+     ▘ ▘▝▀ ▘ ▘▀▀
 --]]
 
 local kbdcfg = require("keyboard_layout").kbdcfg
@@ -51,7 +52,6 @@ theme.widget_mail                               = theme.confdir .. "/icons/mail.
 theme.widget_batt                               = theme.confdir .. "/icons/bat.png"
 theme.widget_clock                              = gears.color.recolor_image(theme.confdir .. "/icons/clock.png", theme.bg_normal)
 theme.widget_vol                                = gears.color.recolor_image(theme.confdir .. "/icons/spkr.png", theme.bg_normal)
---theme.taglist_squares_unsel                     = theme.confdir .. "/icons/square_b.png"
 theme.taglist_bg_focus                          = theme.bg_focus
 theme.taglist_fg_focus                          = theme.fg_normal
 theme.taglist_bg_empty                          = theme.bg_normal
