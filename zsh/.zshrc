@@ -139,7 +139,9 @@ alias digital_rain="digital_rain --color=#98c379"
 
 alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
 
-#alias mouse_norm="xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"'
+# alias mouse_norm="xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"'
 # xinput set-button-map 9 0 3 4 5 6 7 8 1 10
-setxkbmap -option compose:ralt
+# setxkbmap -option compose:ralt
+
+# localectl set-x11-keymap "us, ru" pc105 "" grp:alt_shift_toggle,grp:win_space_toggle,terminate:ctrl_alt_bksp,compose:ralt
 parrot

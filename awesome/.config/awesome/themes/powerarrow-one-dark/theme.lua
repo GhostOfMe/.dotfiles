@@ -107,19 +107,21 @@ local separators = require("separators")
 
 -- Keyboard layout widget
 
-theme.kbdcfg = kbdcfg({type = "gui"})
-theme.kbdcfg.add_primary_layout("English", theme.keyboard_us, "us")
-theme.kbdcfg.add_primary_layout("Русский", theme.keyboard_ru, "ru")
-theme.kbdcfg.bind()
+--theme.kbdcfg = kbdcfg({type = "gui"})
+--theme.kbdcfg.add_primary_layout("English", theme.keyboard_us, "us")
+--theme.kbdcfg.add_primary_layout("Русский", theme.keyboard_ru, "ru")
+--theme.kbdcfg.bind()
 
 -- Mouse bindings
+
+--[[
 theme.kbdcfg.widget:buttons(
 awful.util.table.join(
     awful.button({ }, 1, function () theme.kbdcfg.switch_next() end)
     --, awful.button({ }, 3, function () theme.kbdcfg.menu:toggle() end)
   )
 )
-
+]]--
 -- Textclock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
 local clock = awful.widget.watch(
@@ -421,7 +423,7 @@ function theme.at_screen_connect(s)
         {cpuicon, cpu.widget},
         {tempicon, temp.widget},
         {neticon, net.widget},
-        {spr, theme.kbdcfg.widget, spr},
+        {spr, --[[theme.kbdcfg.widget]], spr},
         {clock, spr, spr},
         {s.mylayoutbox}
     }

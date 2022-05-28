@@ -11,5 +11,5 @@ function run {
 
 run "redshift"
 nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-auto
-
+#setxkbmap -option grp:alt_shift_toggle us,ru
 #run 'setxkbmap -option grp:alt_shift_toggle "us,ru"'

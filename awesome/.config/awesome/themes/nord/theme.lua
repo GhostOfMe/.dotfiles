@@ -102,17 +102,16 @@ theme.keyboard_ru                               = theme.confdir .. "/icons/russi
 local markup = lain.util.markup
 
 -- Keyboard layout widget
-
 theme.kbdcfg = kbdcfg({type = "tui"})
-theme.kbdcfg.add_primary_layout("English", "US", "us")
-theme.kbdcfg.add_primary_layout("Русский", "RU", "ru")
+theme.kbdcfg.add_primary_layout("English", "US", "us -option compose:ralt")
+theme.kbdcfg.add_primary_layout("Русский", "RU", "ru,us -option compose:ralt")
 theme.kbdcfg.bind()
 
 -- Mouse bindings
 kbdcfg.widget:buttons(
 awful.util.table.join(
     awful.button({ }, 1, function () kbdcfg.switch_next() end)
-    --, awful.button({ }, 3, function () theme.kbdcfg.menu:toggle() end)
+  , awful.button({ }, 3, function () theme.kbdcfg.menu:toggle() end)
   )
 )
 
@@ -141,7 +140,7 @@ theme.weather = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, units .. "°C "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f°C ", units)))
 
     end
 })
@@ -151,7 +150,7 @@ theme.weather = lain.widget.weather({
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, cpu_now.usage .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f%% ", cpu_now.usage)))
     end
 })
 
@@ -159,7 +158,7 @@ local cpu = lain.widget.cpu({
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, coretemp_now .. "°C "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f°C ", coretemp_now)))
     end
 })
 
@@ -172,7 +171,7 @@ theme.volume = lain.widget.alsa({
             volume_now.level = volume_now.level .. "M"
         end
 
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, volume_now.level .. "% "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f%% ", volume_now.level)))
     end
 })
 
@@ -199,8 +198,8 @@ local netupinfo = lain.widget.net({
             theme.weather.update()
         end
 
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%06.1f", net_now.sent) .. " "))
-        netdowninfo:set_markup(markup.fontfg(theme.font, theme.bg_normal,string.format("%06.1f", net_now.received) .. " "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%06.1f ", net_now.sent%10000)))
+        netdowninfo:set_markup(markup.fontfg(theme.font, theme.bg_normal,string.format("%06.1f ", net_now.received%10000)))
     end
 })
 
@@ -208,7 +207,7 @@ local netupinfo = lain.widget.net({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, mem_now.used .. "M "))
+        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%4.0fM ", mem_now.used)))
     end
 })
 

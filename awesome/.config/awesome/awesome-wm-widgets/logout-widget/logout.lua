@@ -77,6 +77,7 @@ local function launch(args)
     local onreboot = args.onreboot or function() awful.spawn.with_shell("reboot") end
     local onsuspend = args.onsuspend or function()
         capi.keygrabber.stop()
+        w.visible = false
         awful.spawn.with_shell("systemctl suspend")
         w.visible = false
     end

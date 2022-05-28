@@ -290,7 +290,7 @@ globalkeys = my_table.join(
 
 
     -- Shift-Alt to change keyboard layout
-    awful.key({"Shift"}, "Alt_L",  function () beautiful.kbdcfg.switch_next() end),
+    --awful.key({"Shift"}, "Alt_L",  function () beautiful.kbdcfg.switch_next() end),
     -- Alt-Shift to change keyboard layout
     awful.key({"Mod1"}, "Shift_L", function () beautiful.kbdcfg.switch_next() end),
 
@@ -432,7 +432,7 @@ globalkeys = my_table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    awful.key({ modkey, "Shift"   }, "#24", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey, altkey   }, "l",     function () awful.tag.incmwfact( 0.05)          end,
@@ -560,7 +560,7 @@ globalkeys = my_table.join(
               {description = "copy gtk to terminal", group = "hotkeys"}),
 
     -- User programs
-    awful.key({ modkey }, "q", function () awful.spawn(browser) end,
+    awful.key({ modkey }, "#24", function () awful.spawn(browser) end,
               {description = "run browser", group = "launcher"}),
     awful.key({ modkey }, "a", function () awful.spawn(gui_editor) end,
               {description = "run gui editor", group = "launcher"}),
@@ -622,7 +622,7 @@ clientkeys = my_table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ "Control"         }, "q",      function (c) c:kill()                              end,
+    awful.key({ "Control",        }, "#24",      function (c) c:kill()                       end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -849,4 +849,4 @@ end)
 
 --awful.spawn.with_shell("~/.config/awesome/random_wallpaper.sh")
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
-awful.spawn.with_shell("~/.config/awesome/player.sh")
+--awful.spawn.with_shell("~/.config/awesome/player.sh")
