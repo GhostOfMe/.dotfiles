@@ -588,7 +588,7 @@ globalkeys = my_table.join(
         {description = "show rofi", group = "launcher"}),
     --]]
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.spawn.with_shell("rofi -show drun")  end,
+    awful.key({ modkey }, "r", function () awful.spawn.with_shell("rofi -show run")  end,
               {description = "run rofi", group = "launcher"}),
 
     awful.key({ modkey }, "x",
