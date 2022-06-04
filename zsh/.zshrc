@@ -110,20 +110,18 @@ prompt_context() {
   fi
 }
 
-
 export PATH=~/.local/lib:$PATH
 export PATH=/opt:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/home/user/.local/bin:$PATH"
 
 RUST_SRC_PATH="/home/user/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
-export RUST_SRC_PATH
 
+export RUST_SRC_PATH
 export VULKAN_SDK=~/.VulkanSdk/1.2.170.0/x86_64
 export PATH=$VULKAN_SDK/bin:$PATH
 export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
 export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
-
 
 eval "$(starship init zsh)"
 
