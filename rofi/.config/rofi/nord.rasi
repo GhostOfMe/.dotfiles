@@ -1,3 +1,14 @@
+
+/**
+ * Nord rofi theme
+ *
+ * amayer5125/nord-rofi
+ *
+ */
+
+
+
+
 * {
     nord0: #2e3440;
     nord1: #3b4252;
