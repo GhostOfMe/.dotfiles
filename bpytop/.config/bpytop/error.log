@@ -24,3 +24,48 @@ Traceback (most recent call last):
 AttributeError: 'Color' object has no attribute 'dec'
 26/03/21 (23:33:12) | WARNING: Exiting with errorcode (1). Runtime 0:00:02 
 
+03/06/22 (14:14:53) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:15:22) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:18:50) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:19:36) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:20:08) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:21:49) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:22:38) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:25:51) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+03/06/22 (14:28:28) | ERROR: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 1160, in __init__
+    c_t = tuple(map(int, color.split(" ")))
+ValueError: invalid literal for int() with base 10: 'theme[selected_fg]=theme[main_fg]'

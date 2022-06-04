@@ -136,6 +136,7 @@ alias anki='flatpak run net.ankiweb.Anki'
 alias vim='nvim'
 alias colorscripts="/opt/shell-color-scripts/colorscript.sh"
 alias digital_rain="digital_rain --color=#98c379"
+alias wallpaper='nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-zoom-fill'
 
 alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
 

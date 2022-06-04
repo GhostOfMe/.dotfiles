@@ -103,8 +103,8 @@ local markup = lain.util.markup
 
 -- Keyboard layout widget
 theme.kbdcfg = kbdcfg({type = "tui"})
-theme.kbdcfg.add_primary_layout("English", "US", "us -option compose:ralt")
-theme.kbdcfg.add_primary_layout("Русский", "RU", "ru,us -option compose:ralt")
+theme.kbdcfg.add_primary_layout("English", " US ", "us -option compose:ralt")
+theme.kbdcfg.add_primary_layout("Русский", " RU ", "ru,us -option compose:ralt")
 theme.kbdcfg.bind()
 
 -- Mouse bindings
@@ -161,7 +161,6 @@ local temp = lain.widget.temp({
         widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f°C ", coretemp_now)))
     end
 })
-
 
 -- ALSA volume
 local volicon = wibox.widget.imagebox(theme.widget_vol)
@@ -271,7 +270,7 @@ function theme.at_screen_connect(s)
     s.mytaglist = awful.widget.taglist(s, awful.widget.taglist.filter.all, awful.util.taglist_buttons)
 
     -- Create a tasklist widget
-    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
+--    s.mytasklist = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, awful.util.tasklist_buttons)
 
     -- Create the wibox
     s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(19), bg = theme.bg_normal, fg = theme.fg_normal })

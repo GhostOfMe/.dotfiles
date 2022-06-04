@@ -10,6 +10,6 @@ function run {
 #run "picom -b --config  $HOME/.config/picom/picom.sample.conf --experimental-backends"
 
 run "redshift"
-nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-auto
+nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-zoom-fill
 #setxkbmap -option grp:alt_shift_toggle us,ru
 #run 'setxkbmap -option grp:alt_shift_toggle "us,ru"'

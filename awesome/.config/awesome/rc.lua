@@ -588,7 +588,7 @@ globalkeys = my_table.join(
         {description = "show rofi", group = "launcher"}),
     --]]
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.spawn.with_shell("rofi -show run")  end,
+    awful.key({ modkey }, "r", function () awful.spawn.with_shell("rofi -show drun")  end,
               {description = "run rofi", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -849,4 +849,5 @@ end)
 
 --awful.spawn.with_shell("~/.config/awesome/random_wallpaper.sh")
 awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+awful.spawn.with_shell("~/.config/awesome/picom_on.sh")
 --awful.spawn.with_shell("~/.config/awesome/player.sh")
