@@ -277,7 +277,7 @@ globalkeys = my_table.join(
     -- xkill
     awful.key({"Control"}, "Escape", function () awful.spawn.with_shell("xkill") end,
               {description = "xkill", group = "launcher"}),
-    awful.key({ modkey, altkey}, "g", function() logout.launch{} end,
+    awful.key({ modkey, altkey}, "g", function() awful.spawn.with_shell("~/.config/awesome/powermenu") end,
               {description = "Show logout screen", group = "launcher"}),
 
     -- cmus control
