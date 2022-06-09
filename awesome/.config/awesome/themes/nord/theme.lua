@@ -103,8 +103,8 @@ local markup = lain.util.markup
 
 -- Keyboard layout widget
 theme.kbdcfg = kbdcfg({type = "tui"})
-theme.kbdcfg.add_primary_layout("English", " US ", "us -option compose:ralt")
-theme.kbdcfg.add_primary_layout("Русский", " RU ", "ru,us -option compose:ralt")
+theme.kbdcfg.add_primary_layout("English", "| US ", "us -option compose:ralt")
+theme.kbdcfg.add_primary_layout("Русский", "| RU ", "ru,us -option compose:ralt")
 theme.kbdcfg.bind()
 
 -- Mouse bindings
@@ -118,7 +118,7 @@ awful.util.table.join(
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
 local clockicon = wibox.widget.imagebox(theme.widget_clock)
-local mytextclock = wibox.widget.textclock(markup(theme.bg_normal, "%a %d %b ") .. markup(theme.bg_normal, "|") .. markup(theme.bg_normal, " %H:%M "))
+local mytextclock = wibox.widget.textclock(markup(theme.fg_normal, "| %a %d %b ") .. markup(theme.fg_normal, "|") .. markup(theme.fg_normal, " %H:%M "))
 mytextclock.font = theme.font
 
 -- Calendar
@@ -136,11 +136,15 @@ local weathericon = wibox.widget.imagebox(theme.widget_weather)
 theme.weather = lain.widget.weather({
     city_id = 490068,
     notification_preset = { font = "Terminus 10", fg = theme.fg_normal },
-    weather_na_markup = markup.fontfg(theme.font, theme.bg_normal, "N/A "),
+    weather_na_markup = markup.fontfg(theme.font, theme.fg_normal, "N/A "),
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
+        local icon = descr
+        if descr == "overcast clouds" then
+          icon = "摒"
+        end
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f°C ", units)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %s%3.0f°C ", icon, units)))
 
     end
 })
@@ -150,7 +154,7 @@ theme.weather = lain.widget.weather({
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f%% ", cpu_now.usage)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %3.0f%% ", cpu_now.usage)))
     end
 })
 
@@ -158,7 +162,7 @@ local cpu = lain.widget.cpu({
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f°C ", coretemp_now)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %3.0f°C ", coretemp_now)))
     end
 })
 
@@ -166,11 +170,17 @@ local temp = lain.widget.temp({
 local volicon = wibox.widget.imagebox(theme.widget_vol)
 theme.volume = lain.widget.alsa({
     settings = function()
-        if volume_now.status == "off" then
-            volume_now.level = volume_now.level .. "M"
-        end
-
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%3.0f%% ", volume_now.level)))
+      local icon = ""
+      if volume_now.status == "off" then
+          icon = "ﱝ"
+      elseif tonumber(volume_now.level) == 0 then
+          icon = ""
+      elseif tonumber(volume_now.level) <= 50 then
+          icon = ""
+      else
+          icon = "墳"
+      end
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format( "%s%3.0f%% ", icon, volume_now.level)))
     end
 })
 
@@ -197,8 +207,8 @@ local netupinfo = lain.widget.net({
             theme.weather.update()
         end
 
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%06.1f ", net_now.sent%10000)))
-        netdowninfo:set_markup(markup.fontfg(theme.font, theme.bg_normal,string.format("%06.1f ", net_now.received%10000)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format( " 祝%06.1f ", net_now.sent%10000)))
+        netdowninfo:set_markup(markup.fontfg(theme.font, theme.fg_normal,string.format("| %06.1f ", net_now.received%10000)))
     end
 })
 
@@ -206,7 +216,7 @@ local netupinfo = lain.widget.net({
 local memicon = wibox.widget.imagebox(theme.widget_mem)
 local memory = lain.widget.mem({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.bg_normal, string.format("%4.0fM ", mem_now.used)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("|  %4.0fM ", mem_now.used)))
     end
 })
 
@@ -287,6 +297,24 @@ function theme.at_screen_connect(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             wibox.widget.systray(),
+--          wibox.container.background(volicon, theme.bg_normal),
+            wibox.container.background(theme.volume.widget, theme.bg_normal),
+--          wibox.container.background(netdownicon, theme.bg_normal),
+            wibox.container.background(netdowninfo, theme.bg_normal),
+--          wibox.container.background(netupicon, theme.bg_normal),
+            wibox.container.background(netupinfo.widget, theme.bg_normal),
+--          wibox.container.background(memicon, theme.bg_normal),
+            wibox.container.background(memory.widget, theme.bg_normal),
+--          wibox.container.background(cpuicon, theme.bg_normal),
+            wibox.container.background(cpu.widget, theme.bg_normal),
+--          wibox.container.background(tempicon, theme.bg_normal),
+            wibox.container.background(temp.widget, theme.bg_normal),
+--          wibox.container.background(weathericon, theme.bg_normal),
+            wibox.container.background(theme.weather.widget, theme.bg_normal),
+            wibox.container.background(theme.kbdcfg.widget, theme.bg_normal),
+--          wibox.container.background(clockicon, theme.bg_normal),
+            wibox.container.background(mytextclock, theme.bg_normal),
+--[[
             wibox.container.background(volicon, "#5e81ac"),
             wibox.container.background(theme.volume.widget, "#5e81ac"),
             wibox.container.background(netdownicon, "#8fbcbb"),
@@ -304,6 +332,8 @@ function theme.at_screen_connect(s)
             wibox.container.background(theme.kbdcfg.widget, "#4c566a"),
             wibox.container.background(clockicon, "#81a1c1"),
             wibox.container.background(mytextclock, "#81a1c1"),
+]]--
+
             s.mylayoutbox
         },
     }
