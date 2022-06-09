@@ -7,6 +7,9 @@
 
 local awful = require("awful")
 local wibox = require("wibox")
+local lain  = require("lain")
+
+local markup = lain.util.markup
 local kbdcfg = {}
 
 -- Function to change current layout to the next available layout
@@ -42,7 +45,8 @@ function kbdcfg.switch(layout)
     end
 
     if kbdcfg.type == "tui" then
-        kbdcfg.widget:set_text(" " .. layout.label .. " ")
+        --kbdcfg.widget:set_text(" " .. layout.label .. " ")
+        kbdcfg.widget:set_markup(markup.fontfg("monospace 10", "#d8dee9", string.format("%s", layout.label)))
     else
         kbdcfg.widget.image = layout.label
     end
