@@ -142,6 +142,8 @@ theme.weather = lain.widget.weather({
         local icon = descr
         if string.match(descr, "cloud") then
           icon = "摒"
+        elseif string.match(descr, "rain") then
+          icon = "殺"
         end
         units = math.floor(weather_now["main"]["temp"])
         widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %s %3.0f°C ", icon, units)))
