@@ -140,11 +140,11 @@ theme.weather = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         local icon = descr
-        if descr == "overcast clouds" then
+        if string.match(descr, "cloud") then
           icon = "摒"
         end
         units = math.floor(weather_now["main"]["temp"])
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %s%3.0f°C ", icon, units)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %s %3.0f°C ", icon, units)))
 
     end
 })
