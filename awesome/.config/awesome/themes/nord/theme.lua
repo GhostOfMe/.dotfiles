@@ -156,7 +156,7 @@ theme.weather = lain.widget.weather({
 local cpuicon = wibox.widget.imagebox(theme.widget_cpu)
 local cpu = lain.widget.cpu({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %3.0f%% ", cpu_now.usage)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %3.0f%%", cpu_now.usage)))
     end
 })
 
@@ -164,7 +164,7 @@ local cpu = lain.widget.cpu({
 local tempicon = wibox.widget.imagebox(theme.widget_temp)
 local temp = lain.widget.temp({
     settings = function()
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %3.0f°C ", coretemp_now)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format(" %3.0f°C ", coretemp_now)))
     end
 })
 
