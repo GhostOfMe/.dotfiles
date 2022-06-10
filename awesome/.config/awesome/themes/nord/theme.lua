@@ -207,8 +207,8 @@ local netupinfo = lain.widget.net({
             theme.weather.update()
         end
 
-        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format( " 祝%06.1f ", net_now.sent%10000)))
-        netdowninfo:set_markup(markup.fontfg(theme.font, theme.fg_normal,string.format("| %06.1f", net_now.received%10000)))
+        widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format( " 祝 %06.1f ", net_now.sent%10000)))
+        netdowninfo:set_markup(markup.fontfg(theme.font, theme.fg_normal,string.format("|  %06.1f", net_now.received%10000)))
     end
 })
 
