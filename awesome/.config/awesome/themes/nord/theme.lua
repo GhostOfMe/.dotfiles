@@ -140,8 +140,11 @@ theme.weather = lain.widget.weather({
     settings = function()
         descr = weather_now["weather"][1]["description"]:lower()
         local icon = descr
-        if string.match(descr, "few clouds") then
+        if string.match(descr, "few clouds") or
+          string.match(descr, "scattered clouds") then
           icon = "杖"
+        elseif string.match(descr, "rain") then
+          icon = "歹"
         elseif string.match(descr, "cloud") then
           icon = "摒"
         elseif string.match(descr, "rain") then
