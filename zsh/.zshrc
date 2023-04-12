@@ -114,14 +114,15 @@ export PATH=~/.local/lib:$PATH
 export PATH=/opt:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/home/user/.local/bin:$PATH"
-
+export PATH="/home/user/.local/share/applications:$PATH"
+export RACK_DIR="/home/user/Work/Rack-SDK"
 RUST_SRC_PATH="/home/user/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 export RUST_SRC_PATH
-export VULKAN_SDK=~/.VulkanSdk/1.2.170.0/x86_64
-export PATH=$VULKAN_SDK/bin:$PATH
-export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
-export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
+# export VULKAN_SDK=~/.VulkanSdk/1.2.170.0/x86_64
+# export PATH=$VULKAN_SDK/bin:$PATH
+# export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
+# export VK_LAYER_PATH=$VULKAN_SDK/etc/vulkan/explicit_layer.d
 
 eval "$(starship init zsh)"
 
@@ -133,14 +134,14 @@ alias update='doas dnf update -y'
 alias anki='flatpak run net.ankiweb.Anki'
 alias vim='nvim'
 alias colorscripts="/opt/shell-color-scripts/colorscript.sh"
-alias digital_rain="digital_rain --color=#98c379"
+alias digital_rain="digital_rain --color=#98c379 --background=#2f3b35"
 alias wallpaper='nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-zoom-fill'
 alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
-alias top="bpytop"
+# alias top="bpytop"
 
 # alias mouse_norm="xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"'
 # xinput set-button-map 9 0 3 4 5 6 7 8 1 10
 # setxkbmap -option compose:ralt
 
 # localectl set-x11-keymap "us, ru" pc105 "" grp:alt_shift_toggle,grp:win_space_toggle,terminate:ctrl_alt_bksp,compose:ralt
-parrot
+# parrot

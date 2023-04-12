@@ -4,9 +4,9 @@
 
 style "sidepane" {
 
-	GtkTreeView::odd_row_color = @sidebar_bg
+	GtkTreeView::odd_row_color = @sidebar_fg
   	GtkTreeView::even_row_color = @sidebar_bg
-	base[NORMAL] 		= @bg_color
+	base[NORMAL] 		= @fg_color
 	base[INSENSITIVE] 	= mix(0.4, shade(1.35, @selected_bg_color), shade(0.9, @base_color))
 	bg[NORMAL] 			= @bg_color
 	text[NORMAL] 		= mix(0.9, @fg_color, @bg_color)

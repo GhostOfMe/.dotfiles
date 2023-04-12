@@ -80,3 +80,93 @@ Traceback (most recent call last):
 KeyError: 'pid'
 09/06/22 (00:08:32) | WARNING: Exiting with errorcode (1). Runtime 0:00:39 
 
+06/08/22 (12:46:00) | ERROR: Data collection thread failed with exception: 'pid'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2638, in _draw_fg
+    f'{Mv.to(dy-1, x+1)}{THEME.proc_box(Symbol.title_left)}{Fx.b}{THEME.title(str(proc.details["pid"]))}{Fx.ub}{THEME.proc_box(Symbol.title_right)}'
+KeyError: 'pid'
+06/08/22 (12:46:01) | WARNING: Exiting with errorcode (1). Runtime 2 days, 16:35:09 
+
+01/10/22 (19:41:48) | ERROR: Data collection thread failed with exception: 'pid'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2638, in _draw_fg
+    f'{Mv.to(dy-1, x+1)}{THEME.proc_box(Symbol.title_left)}{Fx.b}{THEME.title(str(proc.details["pid"]))}{Fx.ub}{THEME.proc_box(Symbol.title_right)}'
+KeyError: 'pid'
+01/10/22 (19:41:49) | WARNING: Exiting with errorcode (1). Runtime 0:46:31 
+
+09/10/22 (20:42:20) | ERROR: Data collection thread failed with exception: 'pid'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2638, in _draw_fg
+    f'{Mv.to(dy-1, x+1)}{THEME.proc_box(Symbol.title_left)}{Fx.b}{THEME.title(str(proc.details["pid"]))}{Fx.ub}{THEME.proc_box(Symbol.title_right)}'
+KeyError: 'pid'
+09/10/22 (20:42:21) | WARNING: Exiting with errorcode (1). Runtime 8 days, 1:00:26 
+
+25/10/22 (16:26:31) | ERROR: Data collection thread failed with exception: 'pid'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2638, in _draw_fg
+    f'{Mv.to(dy-1, x+1)}{THEME.proc_box(Symbol.title_left)}{Fx.b}{THEME.title(str(proc.details["pid"]))}{Fx.ub}{THEME.proc_box(Symbol.title_right)}'
+KeyError: 'pid'
+25/10/22 (16:26:32) | WARNING: Exiting with errorcode (1). Runtime 7 days, 23:50:51 
+
+27/10/22 (20:07:59) | ERROR: Data collection thread failed with exception: 'pid'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2638, in _draw_fg
+    f'{Mv.to(dy-1, x+1)}{THEME.proc_box(Symbol.title_left)}{Fx.b}{THEME.title(str(proc.details["pid"]))}{Fx.ub}{THEME.proc_box(Symbol.title_right)}'
+KeyError: 'pid'
+27/10/22 (20:07:59) | WARNING: Exiting with errorcode (1). Runtime 2 days, 3:39:39 
+
+08/11/22 (16:32:15) | ERROR: Data collection thread failed with exception: 'pid'
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 2959, in _runner
+    collector._draw()
+  File "/usr/bin/bpytop", line 3991, in _draw
+    ProcBox._draw_fg()
+  File "/usr/bin/bpytop", line 2638, in _draw_fg
+    f'{Mv.to(dy-1, x+1)}{THEME.proc_box(Symbol.title_left)}{Fx.b}{THEME.title(str(proc.details["pid"]))}{Fx.ub}{THEME.proc_box(Symbol.title_right)}'
+KeyError: 'pid'
+08/11/22 (16:32:16) | WARNING: Exiting with errorcode (1). Runtime 7 days, 0:18:52 
+
+14/02/23 (14:49:14) | ERROR: Exception when sending signal 9 to pid 163
+14/02/23 (14:49:14) | ERROR: [Errno 1] Operation not permitted
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 5479, in process_keys
+    os.kill(pid, sig)
+PermissionError: [Errno 1] Operation not permitted
+14/02/23 (14:52:40) | ERROR: Exception when sending signal 9 to pid 163
+14/02/23 (14:52:40) | ERROR: [Errno 1] Operation not permitted
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 5479, in process_keys
+    os.kill(pid, sig)
+PermissionError: [Errno 1] Operation not permitted
+14/02/23 (14:52:43) | ERROR: Exception when sending signal 9 to pid 163
+14/02/23 (14:52:43) | ERROR: [Errno 1] Operation not permitted
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 5479, in process_keys
+    os.kill(pid, sig)
+PermissionError: [Errno 1] Operation not permitted
+14/02/23 (14:52:46) | ERROR: Exception when sending signal 9 to pid 164
+14/02/23 (14:52:46) | ERROR: [Errno 1] Operation not permitted
+Traceback (most recent call last):
+  File "/usr/bin/bpytop", line 5479, in process_keys
+    os.kill(pid, sig)
+PermissionError: [Errno 1] Operation not permitted

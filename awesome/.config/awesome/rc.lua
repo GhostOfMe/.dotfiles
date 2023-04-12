@@ -433,7 +433,7 @@ globalkeys = my_table.join(
     awful.key({ modkey, "Control" }, "r", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
     awful.key({ modkey, "Shift"   }, "#24", awesome.quit,
-              {description = "quit awesome", group = "awesome"}),
+              {description = "(q) quit awesome", group = "awesome"}),
 
     awful.key({ modkey, altkey   }, "l",     function () awful.tag.incmwfact( 0.05)          end,
               {description = "increase master width factor", group = "layout"}),
@@ -561,7 +561,7 @@ globalkeys = my_table.join(
 
     -- User programs
     awful.key({ modkey }, "#24", function () awful.spawn(browser) end,
-              {description = "run browser", group = "launcher"}),
+              {description = "(q) run browser", group = "launcher"}),
     awful.key({ modkey }, "a", function () awful.spawn(gui_editor) end,
               {description = "run gui editor", group = "launcher"}),
     awful.key({ modkey }, "e", function () awful.spawn(explorer) end,
@@ -588,7 +588,7 @@ globalkeys = my_table.join(
         {description = "show rofi", group = "launcher"}),
     --]]
     -- Prompt
-    awful.key({ modkey }, "r", function () awful.spawn.with_shell("rofi -show run")  end,
+    awful.key({ modkey }, "r", function () awful.spawn.with_shell("rofi -show drun")  end,
               {description = "run rofi", group = "launcher"}),
 
     awful.key({ modkey }, "x",
@@ -623,7 +623,7 @@ clientkeys = my_table.join(
         end,
         {description = "toggle fullscreen", group = "client"}),
     awful.key({ "Control",        }, "#24",      function (c) c:kill()                       end,
-              {description = "close", group = "client"}),
+              {description = "(q) close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
