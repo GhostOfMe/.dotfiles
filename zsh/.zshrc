@@ -139,6 +139,8 @@ alias wallpaper='nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-
 alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
 # alias top="bpytop"
 
+alias mpv='mpv -af "aformat=cl=stereo,dynaudnorm"'
+
 # alias mouse_norm="xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"'
 # xinput set-button-map 9 0 3 4 5 6 7 8 1 10
 # setxkbmap -option compose:ralt
