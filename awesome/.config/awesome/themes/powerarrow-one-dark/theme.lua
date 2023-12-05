@@ -307,8 +307,8 @@ local net = lain.widget.net({
 
 -- Separators
 local spr     = wibox.widget.textbox(' ')
-local arrl_ll = separators.arrow_left(theme.bg_focus, theme.bg_focus, theme.bg_normal)
-local arrl_ld = separators.arrow_left(theme.bg_normal, theme.bg_focus,theme.bg_normal)
+-- local arrl_ll = separators.arrow_left(theme.bg_focus, theme.bg_focus, theme.bg_normal)
+-- local arrl_ld = separators.arrow_left(theme.bg_normal, theme.bg_focus,theme.bg_normal)
 
 
 
