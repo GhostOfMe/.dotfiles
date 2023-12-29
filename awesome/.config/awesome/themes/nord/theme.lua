@@ -38,28 +38,6 @@ theme.menu_fg_normal                            = "#434c5e"
 theme.menu_fg_focus                             = "#4c566a"
 theme.menu_bg_normal                            = "#d8dee9"
 theme.menu_bg_focus                             = "#e5e9f0"
-theme.widget_temp                               = gears.color.recolor_image(theme.confdir .. "/icons/temp.png",
-  theme.bg_normal)
-theme.widget_uptime                             = theme.confdir .. "/icons/ac.png"
-theme.widget_cpu                                = gears.color.recolor_image(theme.confdir .. "/icons/cpu.png",
-  theme.bg_normal)
-theme.widget_weather                            = gears.color.recolor_image(theme.confdir .. "/icons/dish.png",
-  theme.bg_normal)
-theme.widget_fs                                 = theme.confdir .. "/icons/fs.png"
-theme.widget_mem                                = gears.color.recolor_image(theme.confdir .. "/icons/mem.png",
-  theme.bg_normal)
-theme.widget_note                               = theme.confdir .. "/icons/note.png"
-theme.widget_note_on                            = theme.confdir .. "/icons/note_on.png"
-theme.widget_netdown                            = gears.color.recolor_image(theme.confdir .. "/icons/net_down.png",
-  theme.bg_normal)
-theme.widget_netup                              = gears.color.recolor_image(theme.confdir .. "/icons/net_up.png",
-  theme.bg_normal)
-theme.widget_mail                               = theme.confdir .. "/icons/mail.png"
-theme.widget_batt                               = theme.confdir .. "/icons/bat.png"
-theme.widget_clock                              = gears.color.recolor_image(theme.confdir .. "/icons/clock.png",
-  theme.bg_normal)
-theme.widget_vol                                = gears.color.recolor_image(theme.confdir .. "/icons/spkr.png",
-  theme.bg_normal)
 theme.taglist_bg_focus                          = theme.bg_focus
 theme.taglist_fg_focus                          = theme.fg_normal
 theme.taglist_bg_empty                          = theme.bg_normal
@@ -223,10 +201,12 @@ local netupinfo = lain.widget.net({
       theme.weather.update()
     end
 
+
     widget:set_markup(
       markup.fontfg(
         theme.font,
         theme.fg_normal,
+        --string.format(" 祝 %06.1f %s", net_now.sent % 10000, type(keysym))
         string.format(" 祝 %06.1f ", net_now.sent % 10000)
       ))
     netdowninfo:set_markup(
