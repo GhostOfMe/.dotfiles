@@ -118,31 +118,31 @@ theme.cal = lain.widget.cal({
 })
 
 -- Weather
-theme.weather = lain.widget.weather({
-  city_id = 490068,
-  notification_preset = { font = "monospace 10", fg = theme.fg_normal },
-  weather_na_markup = markup.fontfg(theme.font, theme.fg_normal, "N/A "),
-  settings = function()
-    local descr = weather_now["weather"][1]["description"]:lower()
-    local icon = descr
-    if string.match(descr, "few clouds") or
-        string.match(descr, "scattered clouds") then
-      icon = "杖"
-    elseif string.match(descr, "rain") then
-      icon = "歹"
-    elseif string.match(descr, "cloud") then
-      icon = "摒"
-    elseif string.match(descr, "rain") then
-      icon = "殺"
-    elseif string.match(descr, "clear") then
-      icon = "滛"
-    elseif string.match(descr, "snow") then
-      icon = "󰖘"
-    end
-    local units = math.floor(weather_now["main"]["temp"])
-    widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %s %3.0f°C ", icon, units)))
-  end
-})
+--theme.weather = lain.widget.weather({
+--  city_id = 490068,
+--  notification_preset = { font = "monospace 10", fg = theme.fg_normal },
+--  weather_na_markup = markup.fontfg(theme.font, theme.fg_normal, "N/A "),
+--  settings = function()
+--    local descr = weather_now["weather"][1]["description"]:lower()
+--    local icon = descr
+--    if string.match(descr, "few clouds") or
+--        string.match(descr, "scattered clouds") then
+--      icon = "杖"
+--    elseif string.match(descr, "rain") then
+--      icon = "歹"
+--    elseif string.match(descr, "cloud") then
+--      icon = "摒"
+--    elseif string.match(descr, "rain") then
+--      icon = "殺"
+--    elseif string.match(descr, "clear") then
+--      icon = "滛"
+--    elseif string.match(descr, "snow") then
+--      icon = "󰖘"
+--    end
+--    local units = math.floor(weather_now["main"]["temp"])
+--    widget:set_markup(markup.fontfg(theme.font, theme.fg_normal, string.format("| %s %3.0f°C ", icon, units)))
+--  end
+--})
 
 
 -- CPU
@@ -195,10 +195,10 @@ theme.volume.widget:buttons(awful.util.table.join(
 local netdowninfo = wibox.widget.textbox()
 local netupinfo = lain.widget.net({
   settings = function()
-    if iface ~= "network off" and
-        string.match(theme.weather.widget.text, "N/A")
+    if iface ~= "network off" --and
+        --string.match(theme.weather.widget.text, "N/A")
     then
-      theme.weather.update()
+      --theme.weather.update()
     end
 
 
@@ -312,7 +312,7 @@ function theme.at_screen_connect(s)
       wibox.container.background(memory.widget, theme.bg_normal),
       wibox.container.background(cpu.widget, theme.bg_normal),
       wibox.container.background(temp.widget, theme.bg_normal),
-      wibox.container.background(theme.weather.widget, theme.bg_normal),
+--      wibox.container.background(theme.weather.widget, theme.bg_normal),
       wibox.container.background(theme.kbdcfg.widget, theme.bg_normal),
       wibox.container.background(mytextclock, theme.bg_normal),
 

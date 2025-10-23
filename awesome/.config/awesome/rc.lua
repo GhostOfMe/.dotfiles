@@ -28,6 +28,18 @@ require("awful.hotkeys_popup.keys")
 local my_table = awful.util.table or gears.table -- 4.{0,1} compatibility
 local dpi      = require("beautiful.xresources").apply_dpi
 local logout   = require("awesome-wm-widgets.logout-widget.logout")
+
+-- Notifications
+--
+--
+
+beautiful.notification_max_width = 100;
+beautiful.notification_max_height = 200;
+
+
+naughty.config.defaults['icon_size'] = 100;
+
+
 -- }}}
 
 -- {{{ Error handling
@@ -204,7 +216,18 @@ lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
 beautiful.init(string.format("%s/.config/awesome/themes/%s/theme.lua", os.getenv("HOME"), chosen_theme))
+
+
+-- Notifications
+--
+
+beautiful.notfication_width = 400;
+
 -- }}}
+
+
+
+
 
 -- {{{ Menu
 local myawesomemenu = {
@@ -475,8 +498,8 @@ globalkeys = my_table.join(
     { description = "show calendar", group = "widgets" }),
   awful.key({ altkey, }, "h", function() if beautiful.fs then beautiful.fs.show(7) end end,
     { description = "show filesystem", group = "widgets" }),
-  awful.key({ altkey, }, "w", function() if beautiful.weather then beautiful.weather.show(7) end end,
-    { description = "show weather", group = "widgets" }),
+  -- awful.key({ altkey, }, "w", function() if beautiful.weather then beautiful.weather.show(7) end end,
+  --   { description = "show weather", group = "widgets" }),
 
   -- Brightness
   awful.key({}, "XF86MonBrightnessUp", function() os.execute("xbacklight -inc 10") end,
@@ -625,7 +648,7 @@ clientkeys = my_table.join(
       c:raise()
     end,
     { description = "toggle fullscreen", group = "client" }),
-  awful.key({ "Control", }, "#24", function(c) c:kill() end,
+  awful.key({ altkey, }, "#70", function(c) c:kill() end,
     { description = "(q) close", group = "client" }),
   awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
     { description = "toggle floating", group = "client" }),

@@ -118,7 +118,11 @@ export PATH="/home/user/.local/share/applications:$PATH"
 export RACK_DIR="/home/user/Work/Rack-SDK"
 RUST_SRC_PATH="/home/user/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
+# export VST3_PATH="usr/lib/vst3"
+export VST3_PATH="~/.vst3"
+
 export RUST_SRC_PATH
+
 # export VULKAN_SDK=~/.VulkanSdk/1.2.170.0/x86_64
 # export PATH=$VULKAN_SDK/bin:$PATH
 # export LD_LIBRARY_PATH=$VULKAN_SDK/lib:$LD_LIBRARY_PATH
@@ -140,7 +144,7 @@ alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
 
 alias mpv='mpv -af "aformat=cl=stereo,dynaudnorm"'
 
-# setxkbmap -option compose:ralt
+setxkbmap -option compose:ralt
 
 
 #[ -f "/home/user/.ghcup/env" ] && source "/home/user/.ghcup/env" # ghcup-env

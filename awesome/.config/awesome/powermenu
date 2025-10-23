@@ -6,7 +6,7 @@ case "$chosen" in
     "Power Off") shutdown now ;;
     "Restart") reboot ;;
     "Lock") systemctl suspend ;;
-    "Suspend") systemctl suspend ;;
+    "Suspend") doas systemctl suspend ;;
     "Log Out") echo 'awesome.quit()' | awesome-client ;;
     *) exit 1 ;;
 esac
