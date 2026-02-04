@@ -308,12 +308,12 @@ globalkeys = my_table.join(
     { description = "Show logout screen", group = "launcher" }),
 
   -- cmus control
-  awful.key({}, "XF86AudioPlay", function() awful.util.spawn("cmus-remote --pause") end),
-  awful.key({}, "XF86AudioNext", function() awful.util.spawn("cmus-remote --next") end),
-  awful.key({}, "XF86AudioPrev", function() awful.util.spawn("cmus-remote --prev") end),
-  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("cmus-remote --vol +5%") end),
-  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("cmus-remote --vol -5%") end),
-  awful.key({}, "XF86AudioMute", function() awful.util.spawn("amixer -D pulse set Master 1+ toggle") end),
+  -- awful.key({}, "XF86AudioPlay", function() awful.util.spawn("cmus-remote --pause") end),
+  -- awful.key({}, "XF86AudioNext", function() awful.util.spawn("cmus-remote --next") end),
+  -- awful.key({}, "XF86AudioPrev", function() awful.util.spawn("cmus-remote --prev") end),
+  -- awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn("cmus-remote --vol +5%") end),
+  -- awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn("cmus-remote --vol -5%") end),
+  -- awful.key({}, "XF86AudioMute", function() awful.util.spawn("amixer -D pulse set Master 1+ toggle") end),
 
 
   -- Shift-Alt to change keyboard layout
@@ -540,43 +540,58 @@ globalkeys = my_table.join(
     { description = "volume 0%", group = "hotkeys" }),
 
   -- MPD control
-  awful.key({ altkey, "Control" }, "Up",
-    function()
-      os.execute("mpc toggle")
-      beautiful.mpd.update()
+  
+  awful.key({}, "XF86AudioRaiseVolume", 
+    function() 
+      awful.util.spawn("rmpc volume +5") 
     end,
-    { description = "mpc toggle", group = "widgets" }),
-  awful.key({ altkey, "Control" }, "Down",
+    { description = "rmpc volume up", group = "widgets" }),
+  
+  awful.key({}, "XF86AudioLowerVolume", 
+    function() 
+      awful.util.spawn("rmpc volume -5") 
+  end,
+    { description = "rmpc volume down", group = "widgets" }),
+  
+  awful.key({}, "XF86AudioMute", function() awful.util.spawn("amixer -D pulse set Master 1+ toggle") end),
+
+  awful.key({}, "XF86AudioPlay",
     function()
-      os.execute("mpc stop")
-      beautiful.mpd.update()
+      awful.util.spawn("rmpc togglepause")
+      -- beautiful.mpd.update()
     end,
-    { description = "mpc stop", group = "widgets" }),
-  awful.key({ altkey, "Control" }, "Left",
+    { description = "rmpc pause/play", group = "widgets" }),
+  awful.key({}, "XF86AudioStop",
     function()
-      os.execute("mpc prev")
-      beautiful.mpd.update()
+      awful.util.spawn("rmpc stop")
+      -- beautiful.mpd.update()
     end,
-    { description = "mpc prev", group = "widgets" }),
-  awful.key({ altkey, "Control" }, "Right",
+    { description = "rmpc stop", group = "widgets" }),
+  awful.key({}, "XF86AudioNext",
     function()
-      os.execute("mpc next")
-      beautiful.mpd.update()
+      os.execute("rmpc next")
+      -- beautiful.mpd.update()
+    end,
+    { description = "rmpc prev", group = "widgets" }),
+  awful.key({}, "XF86AudioPrev",
+    function()
+      os.execute("rmpc prev")
+      -- beautiful.mpd.update()
     end,
     { description = "mpc next", group = "widgets" }),
-  awful.key({ altkey }, "0",
-    function()
-      local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-      if beautiful.mpd.timer.started then
-        beautiful.mpd.timer:stop()
-        common.text = common.text .. lain.util.markup.bold("OFF")
-      else
-        beautiful.mpd.timer:start()
-        common.text = common.text .. lain.util.markup.bold("ON")
-      end
-      naughty.notify(common)
-    end,
-    { description = "mpc on/off", group = "widgets" }),
+  -- awful.key({ altkey }, "0",
+  --   function()
+  --     local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
+  --     if beautiful.mpd.timer.started then
+  --       beautiful.mpd.timer:stop()
+  --       common.text = common.text .. lain.util.markup.bold("OFF")
+  --     else
+  --       beautiful.mpd.timer:start()
+  --       common.text = common.text .. lain.util.markup.bold("ON")
+  --     end
+  --     naughty.notify(common)
+  --   end,
+  --   { description = "mpc on/off", group = "widgets" }),
 
   -- Copy primary to clipboard (terminals to gtk)
   awful.key({ modkey }, "c", function() awful.spawn.with_shell("xsel | xsel -i -b") end,

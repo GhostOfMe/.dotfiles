@@ -8,7 +8,7 @@ export ZSH="/home/user/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -130,17 +130,17 @@ export RUST_SRC_PATH
 
 eval "$(starship init zsh)"
 
-alias ls="exa --group-directories-first"
-alias cat="bat"
-alias parrot="/home/user/Work/python/smart_parrot/smart_parrot/smart_parrot.py"
+#alias ls="exa --group-directories-first"
+#alias cat="bat"
+#alias parrot="/home/user/Work/python/smart_parrot/smart_parrot/smart_parrot.py"
 alias open='xdg-open'
-alias update='doas dnf update -y'
-alias anki='flatpak run net.ankiweb.Anki'
-alias vim='nvim'
-alias colorscripts="/opt/shell-color-scripts/colorscript.sh"
-alias digital_rain="digital_rain --color=#98c379 --background=#2f3b35"
-alias wallpaper='nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-zoom-fill'
-alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
+#alias update='doas dnf update -y'
+#alias anki='flatpak run net.ankiweb.Anki'
+#alias vim='nvim'
+#alias colorscripts="/opt/shell-color-scripts/colorscript.sh"
+#alias digital_rain="digital_rain --color=#98c379 --background=#2f3b35"
+#alias wallpaper='nitrogen --random "/home/user/Pictures/wallpapers/nord/" --set-zoom-fill'
+#alias mouse_fix="xmodmap -e \"pointer = 0 2 3 4 5 6 7 8 1 10\" "
 
 alias mpv='mpv -af "aformat=cl=stereo,dynaudnorm"'
 
