@@ -19,12 +19,12 @@ local browser  = vars.browser
 -- {{{ Key bindings
 globalkeys = my_table.join(
 --picom
-  awful.key({ modkey }, "p", function() awful.spawn.with_shell("~/.config/awesome/picom_toggle.sh") end,
-    { description = "picom toggle", group = "launcher" }),
+  awful.key({ modkey }, "p", function() awful.spawn.with_shell(vars.config_path.."/scripts/picom_toggle.sh") end,
+    { description = "Picom toggle", group = "launcher" }),
   -- xkill
   awful.key({ "Control" }, "Escape", function() awful.spawn.with_shell("xkill") end,
-    { description = "xkill", group = "launcher" }),
-  awful.key({ modkey, altkey }, "g", function() awful.spawn.with_shell("~/.config/awesome/powermenu.sh") end,
+    { description = "Xkill", group = "launcher" }),
+  awful.key({ modkey, altkey }, "g", function() awful.spawn.with_shell(vars.config_path.."/scripts/powermenu.sh") end,
     { description = "Show logout screen", group = "launcher" }),
 
   -- cmus control
