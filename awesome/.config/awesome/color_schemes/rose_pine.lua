@@ -1,0 +1,42 @@
+local base              = "#191724"
+local surface           = "#ff0000" 
+local overlay           = "#26233a"
+local muted             = "#6e6a86"
+local subtle            = "#908caa"
+local text              = "#e0def4"
+local love              = "#eb6f92"
+local gold              = "#f6c177"
+local rose              = "#ebbcba"
+local pine              = "#31748f"
+local foam              = "#9ccfd8"
+local iris              = "#c4a7e7"
+local highlight_low     = "#21202e"
+local highlight_med     = "#403d52"
+local gighlight_high    = "#524f67"
+theme = {}
+theme.fg_normal                                 = text
+theme.bg_normal                                 = surface
+theme.fg_focus                                  = highlight_low
+theme.bg_focus                                  = love
+theme.fg_urgent                                 = surface
+theme.bg_urgent                                 = rose
+theme.blue                                      = pine
+theme.green                                     = foam
+theme.border_normal                             = subtle
+theme.border_focus                              = love
+theme.border_marked                             = foam
+theme.tasklist_bg_focus                         = foam
+theme.taglist_bg_focus                          = theme.blue
+theme.taglist_fg_focus                          = theme.bg_normal
+theme.taglist_bg_empty                          = theme.bg_normal
+theme.taglist_fg_empty                          = subtle
+theme.taglist_fg_urgent                         = theme.bg_normal
+theme.taglist_bg_urgent                         = theme.green
+theme.taglist_bg_occupied                       = theme.bg_focus
+theme.titlebar_bg_focus                         = theme.bg_focus
+theme.titlebar_bg_normal                        = theme.bg_normal
+theme.titlebar_fg_focus                         = theme.fg_focus
+theme.wibar_border_color                        = theme.border_focus
+
+return theme
+

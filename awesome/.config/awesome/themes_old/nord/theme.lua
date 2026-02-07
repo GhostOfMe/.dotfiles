@@ -19,7 +19,7 @@ local my_table                                  = awful.util.table or gears.tabl
 local theme                                     = {}
 theme.confdir                                   = os.getenv("HOME") .. "/.config/awesome/themes/nord"
 theme.wallpaper                                 = theme.confdir .. "/wall.png"
-theme.font                                      = "monospace 10"
+theme.font                                      = "Fira Code 10"
 theme.bg_normal                                 = "#2e3440"
 theme.bg_focus                                  = "#4c566a"
 theme.bg_urgent                                 = "#434c5e"
@@ -45,6 +45,7 @@ theme.taglist_fg_empty                          = "#4c566a"
 theme.taglist_fg_urgent                         = theme.fg_normal
 theme.taglist_bg_urgent                         = theme.bg_normal
 theme.taglist_bg_occupied                       = theme.bg_normal
+
 theme.tasklist_plain_task_name                  = true
 theme.tasklist_disable_icon                     = true
 theme.useless_gap                               = 0
