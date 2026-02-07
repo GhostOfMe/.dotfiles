@@ -72,6 +72,7 @@ lain.layout.cascade.tile.nmaster       = 5
 lain.layout.cascade.tile.ncol          = 2
 
 beautiful.init(vars.config_path .. "/themes/nord.lua")
+beautiful.maximized_hide_border = true
 gears.debug.dump(beautiful.red)
 require("main.tag")
 require("appearance.wibox")

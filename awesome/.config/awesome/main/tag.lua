@@ -4,7 +4,7 @@ local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 
 
-awful.util.tagnames = { "➀", "➁", "➂", "➃", "➄" }
+--awful.util.tagnames = { "➀", "➁", "➂", "➃", "➄" }
 
 local tags = { "I", "II", "III", "IV", "V" }
 awful.util.tagnames = tags
