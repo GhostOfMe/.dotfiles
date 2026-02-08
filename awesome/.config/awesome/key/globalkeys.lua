@@ -39,7 +39,8 @@ globalkeys = my_table.join(
   -- Shift-Alt to change keyboard layout
   --awful.key({"Shift"}, "Alt_L",  function () beautiful.kbdcfg.switch_next() end),
   -- Alt-Shift to change keyboard layout
-  awful.key({ "Mod1" }, "Shift_L", function() kbdcfg.switch_next() end),
+  awful.key({ "Mod1" }, "Shift_L", function() kbdcfg.switch_next() end ,
+        { description = "switch keyboard layout", group = "hotkeys" }),
 
 
   -- Take a screenshot

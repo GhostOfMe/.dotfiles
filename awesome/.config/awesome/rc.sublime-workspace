@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"mey",
+				"mykeyboardlayout"
+			],
+			[
+				"separator_sho",
+				"separator_short_r"
+			],
+			[
 				"In",
 				"Init"
 			],
@@ -28,84 +36,136 @@
 	"buffers":
 	[
 		{
-			"file": "appearance/wibox.lua",
+			"file": "key/globalkeys.lua",
 			"settings":
 			{
-				"buffer_size": 2345,
+				"buffer_size": 19786,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			},
 			"undo_stack":
 			[
 				[
+					105,
+					1,
+					"insert",
+					{
+						"characters": " ,"
+					},
+					"AgAAANYHAAAAAAAA1wcAAAAAAAAAAAAA1wcAAAAAAADYBwAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA1gcAAAAAAADWBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					106,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AwAAANgHAAAAAAAA2wcAAAAAAAAAAAAA2QcAAAAAAADZBwAAAAAAAAIAAAAgINkHAAAAAAAA3QcAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA2AcAAAAAAADYBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					107,
+					1,
+					"paste",
+					null,
+					"AQAAAN0HAAAAAAAAEwgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA3QcAAAAAAADdBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					110,
+					10,
+					"left_delete",
+					null,
+					"CgAAAPwHAAAAAAAA/AcAAAAAAAABAAAAbvsHAAAAAAAA+wcAAAAAAAABAAAAZfoHAAAAAAAA+gcAAAAAAAABAAAAZfkHAAAAAAAA+QcAAAAAAAABAAAAcvgHAAAAAAAA+AcAAAAAAAABAAAAY/cHAAAAAAAA9wcAAAAAAAABAAAAc/YHAAAAAAAA9gcAAAAAAAABAAAAIPUHAAAAAAAA9QcAAAAAAAABAAAAa/QHAAAAAAAA9AcAAAAAAAABAAAAY/MHAAAAAAAA8wcAAAAAAAABAAAAbw",
+					"AQAAAAAAAAABAAAA/QcAAAAAAAD9BwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					111,
+					1,
+					"left_delete",
+					null,
+					"AQAAAPIHAAAAAAAA8gcAAAAAAAABAAAAbA",
+					"AQAAAAAAAAABAAAA8wcAAAAAAADzBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					112,
+					1,
+					"insert",
+					{
+						"characters": "switch"
+					},
+					"BgAAAPIHAAAAAAAA8wcAAAAAAAAAAAAA8wcAAAAAAAD0BwAAAAAAAAAAAAD0BwAAAAAAAPUHAAAAAAAAAAAAAPUHAAAAAAAA9gcAAAAAAAAAAAAA9gcAAAAAAAD3BwAAAAAAAAAAAAD3BwAAAAAAAPgHAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8gcAAAAAAADyBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					113,
+					1,
+					"insert",
+					{
+						"characters": " keyboard"
+					},
+					"CQAAAPgHAAAAAAAA+QcAAAAAAAAAAAAA+QcAAAAAAAD6BwAAAAAAAAAAAAD6BwAAAAAAAPsHAAAAAAAAAAAAAPsHAAAAAAAA/AcAAAAAAAAAAAAA/AcAAAAAAAD9BwAAAAAAAAAAAAD9BwAAAAAAAP4HAAAAAAAAAAAAAP4HAAAAAAAA/wcAAAAAAAAAAAAA/wcAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAEIAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA+AcAAAAAAAD4BwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					114,
+					1,
+					"insert",
+					{
+						"characters": " layout"
+					},
+					"BwAAAAEIAAAAAAAAAggAAAAAAAAAAAAAAggAAAAAAAADCAAAAAAAAAAAAAADCAAAAAAAAAQIAAAAAAAAAAAAAAQIAAAAAAAABQgAAAAAAAAAAAAABQgAAAAAAAAGCAAAAAAAAAAAAAAGCAAAAAAAAAcIAAAAAAAAAAAAAAcIAAAAAAAACAgAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAAQgAAAAAAAABCAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		},
+		{
+			"file": "appearance/wibox.lua",
+			"settings":
+			{
+				"buffer_size": 2792,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					6,
+					1,
+					"insert",
+					{
+						"characters": "\n"
+					},
+					"AQAAALQHAAAAAAAAwQcAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAtAcAAAAAAAC0BwAAAAAAAAAAAAAAAPC/"
+				],
+				[
 					7,
 					1,
-					"insert",
-					{
-						"characters": "\t"
-					},
-					"AQAAAO8AAAAAAAAA8AAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA7wAAAAAAAADvAAAAAAAAAAAAAAAAAPC/"
+					"paste",
+					null,
+					"AQAAAMEHAAAAAAAA1wcAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAwQcAAAAAAADBBwAAAAAAAAAAAAAAAPC/"
 				],
 				[
-					10,
+					9,
+					3,
+					"left_delete",
+					null,
+					"AwAAAMkHAAAAAAAAyQcAAAAAAAAEAAAAICAgIMUHAAAAAAAAxQcAAAAAAAAEAAAAICAgIMEHAAAAAAAAwQcAAAAAAAAEAAAAICAgIA",
+					"AQAAAAAAAAABAAAAzQcAAAAAAADNBwAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					16,
 					1,
 					"insert",
 					{
-						"characters": "\t"
+						"characters": "        "
 					},
-					"AQAAACEBAAAAAAAAJQEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAIQEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					15,
-					1,
-					"insert",
-					{
-						"characters": "\t"
-					},
-					"AQAAAFgBAAAAAAAAWwEAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAWAEAAAAAAABYAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					18,
-					1,
-					"insert",
-					{
-						"characters": "\t"
-					},
-					"AQAAAPAAAAAAAAAA9AAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAA8AAAAAAAAADwAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					21,
-					1,
-					"insert",
-					{
-						"characters": "\t\t"
-					},
-					"AgAAAJEBAAAAAAAAkgEAAAAAAAAAAAAAkgEAAAAAAACWAQAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAAkQEAAAAAAACRAQAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					26,
-					1,
-					"insert",
-					{
-						"characters": "\t\t"
-					},
-					"AgAAAA0AAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAUAAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAADQAAAAAAAAANAAAAAAAAAAAAAAAAAPC/"
-				],
-				[
-					29,
-					1,
-					"insert",
-					{
-						"characters": "\t\t"
-					},
-					"AgAAADQAAAAAAAAANwAAAAAAAAAAAAAANwAAAAAAAAA7AAAAAAAAAAAAAAA",
-					"AQAAAAAAAAABAAAANAAAAAAAAAA0AAAAAAAAAAAAAAAAAPC/"
+					"CAAAANsBAAAAAAAA3AEAAAAAAAAAAAAA3AEAAAAAAADdAQAAAAAAAAAAAADdAQAAAAAAAN4BAAAAAAAAAAAAAN4BAAAAAAAA3wEAAAAAAAAAAAAA3wEAAAAAAADgAQAAAAAAAAAAAADgAQAAAAAAAOEBAAAAAAAAAAAAAOEBAAAAAAAA4gEAAAAAAAAAAAAA4gEAAAAAAADjAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA2wEAAAAAAADbAQAAAAAAAAAAAAAAAPC/"
 				]
 			]
 		}
@@ -142,12 +202,15 @@
 	},
 	"expanded_folders":
 	[
-		"/home/user/.dotfiles/awesome/.config/awesome",
-		"/home/user/.dotfiles/awesome/.config/awesome/appearance",
-		"/home/user/.dotfiles/awesome/.config/awesome/awesome-buttons"
+		"/home/user/.config/awesome",
+		"/home/user/.config/awesome/appearance",
+		"/home/user/.config/awesome/themes_old",
+		"/home/user/.config/awesome/themes_old/nord"
 	],
 	"file_history":
 	[
+		"/home/user/.config/awesome/appearance/widget_bar.lua",
+		"/home/user/.config/awesome/appearance/wibox.lua",
 		"/home/user/.dotfiles/awesome/.config/awesome/themes/nord.lua",
 		"/home/user/.dotfiles/awesome/.config/awesome/rc.lua",
 		"/home/user/.dotfiles/awesome/.config/awesome/key/globalkeys.lua",
@@ -161,7 +224,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -175,6 +238,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"keybo",
+			"key",
+			"next",
+			"layout",
+			"kbdcfg",
+			"next",
+			"set chi",
+			"kbdcfg",
+			"keyboa",
 			".sh"
 		],
 		"highlight": true,
@@ -199,20 +271,51 @@
 			[
 				{
 					"buffer": 0,
-					"file": "appearance/wibox.lua",
+					"file": "key/globalkeys.lua",
 					"selected": true,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2345,
+						"buffer_size": 19786,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								432,
-								432
+								2056,
+								2056
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "appearance/wibox.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2792,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								483,
+								483
 							]
 						],
 						"settings":
@@ -225,7 +328,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"stack_multiselect": false,
 					"type": "text"
 				}

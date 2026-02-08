@@ -62,7 +62,7 @@ local mynetupinfo = lain.widget.net({
       markup.fontfg(
         beautiful.font,
         beautiful.fg_normal,
-        string.format("祝 %06.1f ", net_now.sent % 10000)
+        string.format("祝 %06.1f", net_now.sent % 10000)
       ))
     mynetdowninfo:set_markup(
       markup.fontfg(
@@ -145,23 +145,22 @@ function widgets.systray(s)
 end
 
 -- Keyboard Layout
-local mykeyboardlayout = awful.widget.keyboardlayout()
+local kbdcfg = kbdcfg({ type = "tui" })
+kbdcfg.add_primary_layout("English", "US", "us -option compose:ralt")
+kbdcfg.add_primary_layout("Русский", "RU", "ru,us -option compose:ralt")
+kbdcfg.bind()
 
-mykeyboardlayout:buttons(
+kbdcfg.widget:buttons(
   awful.util.table.join(
     awful.button({}, 1, function() kbdcfg.switch_next() end)
   )
 )
 
-local kbdcfg = kbdcfg({ type = "tui" })
-kbdcfg.add_primary_layout("English", "| US ", "us -option compose:ralt")
-kbdcfg.add_primary_layout("Русский", "| RU ", "ru,us -option compose:ralt")
-kbdcfg.bind()
 
 function widgets.keyboardlayout(s)
 	return wibox.widget {
 		screen = s,
-		widget = mykeyboardlayout,
+		widget = kbdcfg.widget,
 	}
 end
 

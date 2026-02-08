@@ -11,10 +11,7 @@ local appearance = {
     my_widgets      = require("appearance.widget_bar"),
 }
 
-local separator = wibox.container.margin(wibox.widget.textbox(" | "), 0, 0, 0, 1)
-local separator_short_l = wibox.container.margin(wibox.widget.textbox(" |"), 0, 0, 0, 1)
-local separator_short_r = wibox.container.margin(wibox.widget.textbox("| "), 0, 0, 0, 1)
-
+local separator         = wibox.container.margin(wibox.widget.textbox(" | "), 0, 0, 0, 1)
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -59,9 +56,9 @@ awful.screen.connect_for_each_screen(function(s)
             appearance.my_widgets.cpu(s),
             separator,
             appearance.my_widgets.temp(s),
-            separator_short_l,
+            separator,
             wibox.container.margin(appearance.my_widgets.keyboardlayout(s), 0, 0, 0, 1),
-            separator_short_r,
+            separator,
             wibox.container.margin(appearance.my_widgets.textclock(s), 0, 0, 0, 1),
             s.mylayoutbox,
         },
