@@ -45,8 +45,8 @@ function kbdcfg.switch(layout)
     end
 
     if kbdcfg.type == "tui" then
-        --kbdcfg.widget:set_text(" " .. layout.label .. " ")
-        kbdcfg.widget:set_markup(markup.fontfg("monospace 10", "#d8dee9", string.format("%s", layout.label)))
+        kbdcfg.widget:set_text(" " .. layout.label .. " ")
+        kbdcfg.widget:set_markup(markup.fontfg(kbdcfg.font, kbdcfg.fg, string.format("%s", layout.label)))
     else
         kbdcfg.widget.image = layout.label
     end
@@ -139,7 +139,8 @@ local function factory(args)
     kbdcfg.menu                  = nil
     kbdcfg.type                  = args.type or "tui"
     kbdcfg.remember_layout       = args.remember_layout or false
-
+    kbdcfg.fg                    = args.fg or "#ffdee9"
+    kbdcfg.fontfg                = args.font or "monospace 10"
     for i = 1, #kbdcfg.layouts do
         table.insert(kbdcfg.additional_layouts, kbdcfg.layouts[i])
     end

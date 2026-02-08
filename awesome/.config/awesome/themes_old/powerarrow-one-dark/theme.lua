@@ -435,25 +435,25 @@ function theme.at_screen_connect(s)
 --      theme.blue/
     }
 
-    local right_widgets = {}
-      for i = 1,#widget_list,1
-        do
-            color_n = powerline_colors[(i % #powerline_colors) + 1]
-            if ( i > 1 )
-            then color_p = powerline_colors[((i-1) % #powerline_colors) + 1]
-            else color_p = theme.bg_normal
-            end
-            local sep = separators.arrow_left(color_p, color_n, theme.bg_normal)
-            table.insert(right_widgets, sep)
-            for j = 1,#widget_list[i],1
-                do
-                    local w = widget_list[i][j]
-                    table.insert(
-                        right_widgets,
-                        wibox.container.background(w, color_n)
-                    )
-                end
+local right_widgets = {}
+  for i = 1,#widget_list,1
+    do
+        color_n = powerline_colors[(i % #powerline_colors) + 1]
+        if ( i > 1 )
+        then color_p = powerline_colors[((i-1) % #powerline_colors) + 1]
+        else color_p = theme.bg_normal
         end
+        local sep = separators.arrow_left(color_p, color_n, theme.bg_normal)
+        table.insert(right_widgets, sep)
+        for j = 1,#widget_list[i],1
+            do
+                local w = widget_list[i][j]
+                table.insert(
+                    right_widgets,
+                    wibox.container.background(w, color_n)
+                )
+            end
+    end
 
     -- Add widgets to the wibox
     s.mywibox:setup {
