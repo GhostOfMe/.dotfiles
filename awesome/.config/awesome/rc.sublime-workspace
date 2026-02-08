@@ -27,6 +27,88 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "appearance/wibox.lua",
+			"settings":
+			{
+				"buffer_size": 2345,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			},
+			"undo_stack":
+			[
+				[
+					7,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAO8AAAAAAAAA8AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA7wAAAAAAAADvAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					10,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAACEBAAAAAAAAJQEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAIQEAAAAAAAAhAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					15,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAFgBAAAAAAAAWwEAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAWAEAAAAAAABYAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					18,
+					1,
+					"insert",
+					{
+						"characters": "\t"
+					},
+					"AQAAAPAAAAAAAAAA9AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAA8AAAAAAAAADwAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					21,
+					1,
+					"insert",
+					{
+						"characters": "\t\t"
+					},
+					"AgAAAJEBAAAAAAAAkgEAAAAAAAAAAAAAkgEAAAAAAACWAQAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAAkQEAAAAAAACRAQAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					26,
+					1,
+					"insert",
+					{
+						"characters": "\t\t"
+					},
+					"AgAAAA0AAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAUAAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAADQAAAAAAAAANAAAAAAAAAAAAAAAAAPC/"
+				],
+				[
+					29,
+					1,
+					"insert",
+					{
+						"characters": "\t\t"
+					},
+					"AgAAADQAAAAAAAAANwAAAAAAAAAAAAAANwAAAAAAAAA7AAAAAAAAAAAAAAA",
+					"AQAAAAAAAAABAAAANAAAAAAAAAA0AAAAAAAAAAAAAAAAAPC/"
+				]
+			]
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -58,11 +140,19 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/home/user/.dotfiles/awesome/.config/awesome",
+		"/home/user/.dotfiles/awesome/.config/awesome/appearance",
+		"/home/user/.dotfiles/awesome/.config/awesome/awesome-buttons"
+	],
 	"file_history":
 	[
+		"/home/user/.dotfiles/awesome/.config/awesome/themes/nord.lua",
+		"/home/user/.dotfiles/awesome/.config/awesome/rc.lua",
+		"/home/user/.dotfiles/awesome/.config/awesome/key/globalkeys.lua",
 		"/home/user/.dotfiles/awesome/.config/awesome/color_schemes/rose_pine.lua",
 		"/home/user/.dotfiles/awesome/.config/awesome/themes/nord/theme.lua",
-		"/home/user/.dotfiles/awesome/.config/awesome/rc.lua",
 		"/home/user/.dotfiles/awesome/.config/awesome/color_schemes/one_dark.lua",
 		"/home/user/Work/rust/slint apps/venti/ui/appwindow.slint",
 		"/home/user/Work/rust/slint apps/timer-rs/ui/appwindow.slint",
@@ -71,7 +161,7 @@
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -85,6 +175,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".sh"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -106,12 +197,44 @@
 		{
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "appearance/wibox.lua",
+					"selected": true,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								432,
+								432
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"stack_multiselect": false,
+					"type": "text"
+				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -151,7 +274,7 @@
 	"project": "rc.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -189,7 +312,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 453.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

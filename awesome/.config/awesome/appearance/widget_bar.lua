@@ -26,7 +26,7 @@ local myvolume = lain.widget.alsa({
       markup.fontfg(
         beautiful.font,
         beautiful.fg_normal,
-        string.format(" %s %3.0f%% ", icon, volume_now.level)))
+        string.format("%s %3.0f%%", icon, volume_now.level)))
   end
 })
 
@@ -62,13 +62,13 @@ local mynetupinfo = lain.widget.net({
       markup.fontfg(
         beautiful.font,
         beautiful.fg_normal,
-        string.format(" 祝 %06.1f ", net_now.sent % 10000)
+        string.format("祝 %06.1f ", net_now.sent % 10000)
       ))
     mynetdowninfo:set_markup(
       markup.fontfg(
         beautiful.font,
         beautiful.fg_normal, 
-        string.format("|  %06.1f", net_now.received % 10000)
+        string.format(" %06.1f ", net_now.received % 10000)
       ))
   end
 })
@@ -94,7 +94,7 @@ local mymemory = lain.widget.mem({
       markup.fontfg(
         beautiful.font,
         beautiful.fg_normal,
-        string.format("|  %4.0fM ", mem_now.used)
+        string.format(" %4.0fM", mem_now.used)
       ))
   end
 })
@@ -109,7 +109,7 @@ end
 -- Cpu
 local mycpu = lain.widget.cpu({
   settings = function()
-    widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, string.format("|  %3.0f%%", cpu_now.usage)))
+    widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, string.format(" %3.0f%%", cpu_now.usage)))
   end
 })
 
@@ -123,7 +123,7 @@ end
 -- Temperature
 local mytemp = lain.widget.temp({
   settings = function()
-    widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, string.format(" %3.0f°C ", coretemp_now)))
+    widget:set_markup(markup.fontfg(beautiful.font, beautiful.fg_normal, string.format("%3.0f°C", coretemp_now)))
   end
 })
 
@@ -146,6 +146,13 @@ end
 
 -- Keyboard Layout
 local mykeyboardlayout = awful.widget.keyboardlayout()
+
+mykeyboardlayout:buttons(
+  awful.util.table.join(
+    awful.button({}, 1, function() kbdcfg.switch_next() end)
+  )
+)
+
 local kbdcfg = kbdcfg({ type = "tui" })
 kbdcfg.add_primary_layout("English", "| US ", "us -option compose:ralt")
 kbdcfg.add_primary_layout("Русский", "| RU ", "ru,us -option compose:ralt")
@@ -160,7 +167,7 @@ end
 
 -- Textclock
 os.setlocale(os.getenv("LANG")) -- to localize the clock
-local mytextclock = wibox.widget.textclock(markup(beautiful.fg_normal, "| %a %d %b ") ..
+local mytextclock = wibox.widget.textclock(markup(beautiful.fg_normal, "%a %d %b ") ..
   markup(beautiful.fg_normal, "|") .. markup(beautiful.fg_normal, " %H:%M "))
 mytextclock.font = beautiful.font
 

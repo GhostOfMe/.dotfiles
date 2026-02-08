@@ -1,15 +1,20 @@
-local gears  = require("gears")
-local awful  = require("awful")
+local gears         = require("gears")
+local awful         = require("awful")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
 local kbdcfg        = require("keyboard_layout").kbdcfg
 
 local appearance = {
-    my_taglist = require("appearance.taglist"),
-    my_tasklist = require("appearance.tasklist"),
-    my_wallpaper = require("appearance.wallpaper"),
-    my_widgets = require("appearance.widget_bar"),
+    my_taglist      = require("appearance.taglist"),
+    my_tasklist     = require("appearance.tasklist"),
+    my_wallpaper    = require("appearance.wallpaper"),
+    my_widgets      = require("appearance.widget_bar"),
 }
+
+local separator = wibox.container.margin(wibox.widget.textbox(" | "), 0, 0, 0, 1)
+local separator_short_l = wibox.container.margin(wibox.widget.textbox(" |"), 0, 0, 0, 1)
+local separator_short_r = wibox.container.margin(wibox.widget.textbox("| "), 0, 0, 0, 1)
+
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -43,13 +48,20 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
             appearance.my_widgets.systray(s),
+            separator,
             appearance.my_widgets.alsa(s),
+            separator,
             appearance.my_widgets.netdown(s),
             appearance.my_widgets.netup(s),
+            separator,
             appearance.my_widgets.memory(s),
+            separator,
             appearance.my_widgets.cpu(s),
+            separator,
             appearance.my_widgets.temp(s),
+            separator_short_l,
             wibox.container.margin(appearance.my_widgets.keyboardlayout(s), 0, 0, 0, 1),
+            separator_short_r,
             wibox.container.margin(appearance.my_widgets.textclock(s), 0, 0, 0, 1),
             s.mylayoutbox,
         },
