@@ -10,7 +10,7 @@ local widgets = {}
 -- ALSA volume
 
 function widgets.alsa(s, fg)
-    local fg = fg or beautiful.fg_normal
+    fg = fg or beautiful.fg_normal
     local myvolume = lain.widget.alsa({
         settings = function()
             local icon = " "
@@ -43,8 +43,8 @@ end
 -- Net
 
 function widgets.my_netinfo(s, fg1, fg2)
-    local fg1 = fg1 or beautiful.blue
-    local fg2 = fg2 or beautiful.green
+    fg1 = fg1 or beautiful.blue
+    fg2 = fg2 or beautiful.green
     local mynetdowninfo = wibox.widget.textbox()
     local mynetupinfo = lain.widget.net({
         settings = function()
@@ -65,7 +65,7 @@ end
 -- Ram
 
 function widgets.memory(s, fg)
-    local fg = fg or beautiful.fg_normal
+    fg = fg or beautiful.fg_normal
     local mymemory = lain.widget.mem({
         settings = function()
             widget:set_markup(markup.fontfg(beautiful.font, fg, string.format(" %4.0fM", mem_now.used)))
@@ -80,7 +80,7 @@ end
 -- Cpu
 
 function widgets.cpu(s, fg)
-    local fg = fg or beautiful.fg_normal
+    fg = fg or beautiful.fg_normal
     local mycpu = lain.widget.cpu({
         settings = function()
             widget:set_markup(markup.fontfg(beautiful.font, fg, string.format(" %3.0f%%", cpu_now.usage)))
@@ -94,7 +94,7 @@ end
 
 -- Temperature
 function widgets.temp(s, fg)
-    local fg = fg or beautiful.fg_normal
+    fg = fg or beautiful.fg_normal
     local mytemp = lain.widget.temp({
         settings = function()
             widget:set_markup(markup.fontfg(beautiful.font, fg, string.format("%3.0f°C", coretemp_now)))
@@ -119,7 +119,7 @@ end
 -- Keyboard Layout
 
 function widgets.keyboardlayout(s, fg)
-    local kbdcfg = kbdcfg({
+    kbdcfg = kbdcfg({
         type = "tui",
         fg = fg or beautiful.fg_normal,
         font = beautiful.font
@@ -143,7 +143,7 @@ end
 
 function widgets.textclock(s, fg)
     os.setlocale(os.getenv("LANG")) -- to localize the clock
-    local fg = fg or beautiful.fg_normal
+    fg = fg or beautiful.fg_normal
     local mytextclock = wibox.widget.textclock(markup(fg, "%a %d %b ") .. markup(fg, "|") ..
                                                    markup.bold(markup(fg, " %H:%M ")))
     mytextclock.font = beautiful.font
