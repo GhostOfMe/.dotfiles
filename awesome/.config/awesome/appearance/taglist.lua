@@ -1,7 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
-local wibox = require("wibox")
-local beautiful = require("beautiful")
+
+local modkey = require("main.user_variables").modkey
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(awful.button({}, 1, function(t)

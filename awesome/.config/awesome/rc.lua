@@ -1,12 +1,17 @@
-local awesome = awesome
-local os = os
+local awesome, client, mouse, screen, tag = awesome, client, mouse, screen, tag
+local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
+local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
+local lain = require("lain")
+-- local menubar       = require("menubar")
 
 require("awful.hotkeys_popup.keys")
+local dpi = require("beautiful.xresources").apply_dpi
+local logout = require("awesome-wm-widgets.logout-widget.logout")
 
 awesome.themes_path = os.getenv("HOME") .. "/.config/awesome/themes/"
 
@@ -46,9 +51,19 @@ local editor = vars.editor
 
 awful.util.terminal = vars.terminal
 
+lain.layout.termfair.nmaster = 3
+lain.layout.termfair.ncol = 1
+lain.layout.termfair.center.nmaster = 3
+lain.layout.termfair.center.ncol = 1
+lain.layout.cascade.tile.offset_x = dpi(2)
+lain.layout.cascade.tile.offset_y = dpi(32)
+lain.layout.cascade.tile.extra_padding = dpi(5)
+lain.layout.cascade.tile.nmaster = 5
+lain.layout.cascade.tile.ncol = 2
+
 beautiful.init(vars.config_path .. "/themes/nord.lua")
 beautiful.maximized_hide_border = true
-
+gears.debug.dump(beautiful.red)
 require("main.tag")
 require("appearance.wibox")
 
