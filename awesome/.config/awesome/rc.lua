@@ -1,17 +1,12 @@
 local awesome = awesome
 local os = os
 
-local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
-local lain = require("lain")
--- local menubar       = require("menubar")
 
 require("awful.hotkeys_popup.keys")
-local dpi = require("beautiful.xresources").apply_dpi
-local logout = require("awesome-wm-widgets.logout-widget.logout")
 
 awesome.themes_path = os.getenv("HOME") .. "/.config/awesome/themes/"
 
