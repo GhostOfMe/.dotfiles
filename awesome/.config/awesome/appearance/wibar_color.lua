@@ -13,7 +13,7 @@ local appearance = {
 
 local separator = wibox.container.margin(wibox.widget.textbox(" "), 0, 0, 0, 1)
 
-local powerline_colors = {beautiful.red, beautiful.green, beautiful.fg_normal}
+local wibar_colors = beautiful.colors
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -31,7 +31,7 @@ awful.screen.connect_for_each_screen(function(s)
 
     local cur = 1
     for i = 2, #my_widgets do
-        local color_p = powerline_colors[((cur - 1) % 3) + 1]
+        local color_p = wibar_colors[((cur - 1) % #wibar_colors) + 1]
         cur = cur + 1
 
         local tmp_background_widget = wibox.container.background(my_widgets[i], color_p)

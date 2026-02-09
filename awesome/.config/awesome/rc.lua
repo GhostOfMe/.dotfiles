@@ -63,9 +63,9 @@ lain.layout.cascade.tile.ncol = 2
 
 beautiful.init(vars.config_path .. "/themes/nord.lua")
 beautiful.maximized_hide_border = true
-gears.debug.dump(beautiful.red)
+
 require("main.tag")
-require("appearance.wibar")
+require("appearance.wibar_color")
 
 require("key.taglist_buttons")
 

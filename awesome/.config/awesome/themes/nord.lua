@@ -15,10 +15,12 @@ local nord = {
     n4 = "#d8dee9",
     n5 = "#e5e9f0",
     n6 = "#eceff4",
+
     n7 = "#8fbcbb",
     n8 = "#88c0d0",
     n9 = "#81a1c1",
     n10 = "#5e81ac",
+
     n11 = "#bf616a",
     n12 = "#d08770",
     n13 = "#ebcb8b",
@@ -46,6 +48,7 @@ theme.fg_normal = nord.n4
 theme.fg_focus = nord.n8
 theme.fg_urgent = nord.n14
 -- theme.fg_minimize   = "#ffffff"
+theme.colors = {nord.n10, nord.n9, nord.n8, nord.n7, nord.n8, nord.n9}
 theme.red = nord.n11
 theme.green = nord.n12
 
