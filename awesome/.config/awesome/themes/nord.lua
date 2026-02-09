@@ -49,7 +49,7 @@ theme.fg_normal = nord.n4
 theme.fg_focus = nord.n8
 theme.fg_urgent = nord.n14
 -- theme.fg_minimize   = "#ffffff"
-theme.colors = {nord.n10, nord.n8, nord.n13, nord.n12, nord.n15}
+theme.colors = {nord.n9, nord.n8, nord.n13, nord.n12, nord.n15}
 theme.red = nord.n11
 theme.green = nord.n12
 
