@@ -93,6 +93,7 @@ function widgets.cpu(s, fg)
 end
 
 -- Temperature
+
 function widgets.temp(s, fg)
     fg = fg or beautiful.fg_normal
     local mytemp = lain.widget.temp({
@@ -107,6 +108,7 @@ function widgets.temp(s, fg)
 end
 
 -- Tray
+
 local mysystray = wibox.widget.systray()
 
 function widgets.systray(s)

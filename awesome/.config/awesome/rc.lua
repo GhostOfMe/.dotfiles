@@ -65,7 +65,7 @@ beautiful.init(vars.config_path .. "/themes/nord.lua")
 beautiful.maximized_hide_border = true
 
 require("main.tag")
-require("appearance.wibar_color")
+require("appearance.wibar")
 
 require("key.taglist_buttons")
 
