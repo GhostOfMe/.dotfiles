@@ -34,7 +34,7 @@ local themes_path = vars.config_path .. "themes/"
 
 local theme = {}
 
-theme.font = "monospace 10"
+theme.font = "FiraCode Nerd Font 10"
 
 theme.bg_normal = nord.n0
 theme.bg_focus = nord.n8

@@ -1,4 +1,3 @@
-local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local lain = require("lain")
@@ -125,8 +124,6 @@ end
 
 -- Keyboard Layout
 
--- kbdcfg.widget:set_markup(markup.fontfg("monospace 10", "#ff0000", string.format("%s", kbdcfg.widget.text)))
-
 function widgets.keyboardlayout(s, fg)
     local kbdcfg = kbdcfg({
         type = "tui",
@@ -149,6 +146,7 @@ function widgets.keyboardlayout(s, fg)
 end
 
 -- Textclock
+
 function widgets.textclock(s, fg)
     os.setlocale(os.getenv("LANG")) -- to localize the clock
     local fg = fg or beautiful.fg_normal

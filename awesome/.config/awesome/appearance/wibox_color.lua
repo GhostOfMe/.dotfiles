@@ -2,7 +2,7 @@ local gears         = require("gears")
 local awful         = require("awful")
 local wibox         = require("wibox")
 local beautiful     = require("beautiful")
-local kbdcfg        = require("keyboard_layout").kbdcfg
+local dpi = require("beautiful.xresources").apply_dpi
 
 local appearance = {
     my_taglist      = require("appearance.taglist"),
@@ -29,7 +29,7 @@ awful.screen.connect_for_each_screen(function(s)
             appearance.my_widgets.cpu(s, beautiful.bg_normal),
             appearance.my_widgets.temp(s, beautiful.bg_normal),
             wibox.container.margin(appearance.my_widgets.keyboardlayout(s, beautiful.bg_normal), 0, 0, 0, 1),
-            wibox.container.margin(appearance.my_widgets.textclock(s, beautiful.bg_normal), 0, 0, 0, 1),
+            appearance.my_widgets.textclock(s, beautiful.bg_normal),
     }
 
     my_widgets[2].fg = "#000000"
@@ -60,7 +60,7 @@ awful.screen.connect_for_each_screen(function(s)
                            awful.button({ }, 4, function () awful.layout.inc( 1) end),
                            awful.button({ }, 5, function () awful.layout.inc(-1) end)))
 
-    s.mywibox = awful.wibar({ position = "top", screen = s })
+    s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(19)})
 
     -- Add widgets to the wibox
     s.mywibox:setup {
