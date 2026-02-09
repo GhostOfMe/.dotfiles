@@ -51,19 +51,9 @@ local editor = vars.editor
 
 awful.util.terminal = vars.terminal
 
-lain.layout.termfair.nmaster = 3
-lain.layout.termfair.ncol = 1
-lain.layout.termfair.center.nmaster = 3
-lain.layout.termfair.center.ncol = 1
-lain.layout.cascade.tile.offset_x = dpi(2)
-lain.layout.cascade.tile.offset_y = dpi(32)
-lain.layout.cascade.tile.extra_padding = dpi(5)
-lain.layout.cascade.tile.nmaster = 5
-lain.layout.cascade.tile.ncol = 2
-
 beautiful.init(vars.config_path .. "/themes/nord.lua")
 beautiful.maximized_hide_border = true
-gears.debug.dump(beautiful.red)
+
 require("main.tag")
 require("appearance.wibox")
 
