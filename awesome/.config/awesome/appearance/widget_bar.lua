@@ -48,12 +48,6 @@ function widgets.my_netinfo(s, fg1, fg2)
     local mynetdowninfo = wibox.widget.textbox()
     local mynetupinfo = lain.widget.net({
         settings = function()
-            if iface ~= "network off" -- and
-            -- string.match(theme.weather.widget.text, "N/A")
-            then
-                -- theme.weather.update()
-            end
-
             widget:set_markup(markup.fontfg(beautiful.font, fg1, string.format("祝 %06.1f", net_now.sent % 10000)))
             mynetdowninfo:set_markup(markup.fontfg(beautiful.font, fg2,
                 string.format(" %06.1f ", net_now.received % 10000)))

@@ -65,7 +65,7 @@ beautiful.init(vars.config_path .. "/themes/nord.lua")
 beautiful.maximized_hide_border = true
 gears.debug.dump(beautiful.red)
 require("main.tag")
-require("appearance.wibox")
+require("appearance.wibar")
 
 require("key.taglist_buttons")
 
