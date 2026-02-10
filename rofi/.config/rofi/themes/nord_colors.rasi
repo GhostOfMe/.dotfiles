@@ -2,8 +2,6 @@
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
 * {
-    font:   "Fira Code 10";
-
     nord0:     #2e3440;
     nord1:     #3b4252;
     nord2:     #434c5e;
@@ -27,11 +25,11 @@
     background-color:   transparent;
     text-color:         @nord4;
     accent-color:       @nord8;
-    urgent-color:     @nord13;
+    urgent-color:       @nord13;
     
-    bg0:     @nord0;
-    bg1:     @nord1;
-    fg0:     @nord4;
+    bg0:                @nord0;
+    bg1:                @nord1;
+    fg0:                @nord4;
     text-color:         @nord4;
 
 }

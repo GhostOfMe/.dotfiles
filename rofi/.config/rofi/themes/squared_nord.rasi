@@ -6,11 +6,7 @@
 * {
     font:   "FiraCode Nerd Font Medium 12";
 
-
-   
-
     background-color:   transparent;
-
 
     margin:     0;
     padding:    0;
@@ -18,10 +14,10 @@
 }
 
 window {
-    location:   center;
-    width:      480;
-    border:     2px solid;
-    border-color: @accent-color; 
+    location:       center;
+    width:          480;
+    border:         2px solid;
+    border-color:   @accent-color; 
 
     background-color:   @bg0;
 }
