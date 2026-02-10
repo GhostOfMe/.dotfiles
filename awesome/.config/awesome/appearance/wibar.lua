@@ -46,7 +46,7 @@ awful.screen.connect_for_each_screen(function(s)
             s.mypromptbox
         },
 
-        appearance.my_tasklist(s), -- Middle widget
+        wibox.container.margin(appearance.my_tasklist(s), 30, 30, 0, 0), -- Middle widget
         -- nil,
 
         { -- Right widgets

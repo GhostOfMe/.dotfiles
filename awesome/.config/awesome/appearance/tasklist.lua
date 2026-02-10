@@ -57,6 +57,7 @@ local function tasklist(s)
         layout = wibox.layout.fixed.horizontal(),
 
         widget_template = widget_template_tasklist,
+        margins = 5
     }
 end
 
