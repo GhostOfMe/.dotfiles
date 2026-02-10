@@ -57,7 +57,9 @@ local function tasklist(s)
         layout = wibox.layout.fixed.horizontal(),
 
         widget_template = widget_template_tasklist,
-        margins = 5
+        style = {
+                bg_focus = beautiful.bg_urgent,  -- Change this to your desired color
+        },
     }
 end
 
