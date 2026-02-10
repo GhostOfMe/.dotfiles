@@ -140,7 +140,7 @@ local function factory(args)
     kbdcfg.type                  = args.type or "tui"
     kbdcfg.remember_layout       = args.remember_layout or false
     kbdcfg.fg                    = args.fg or "#ffdee9"
-    kbdcfg.fontfg                = args.font or "monospace 10"
+    kbdcfg.font                  = args.font or "monospace 10"
     for i = 1, #kbdcfg.layouts do
         table.insert(kbdcfg.additional_layouts, kbdcfg.layouts[i])
     end
