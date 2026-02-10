@@ -1,1 +1,2 @@
-@theme "nord"
+//@theme "nord"
+@theme "/home/user/.config/rofi/themes/squared_nord.rasi"
