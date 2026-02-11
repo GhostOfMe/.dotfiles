@@ -58,7 +58,7 @@ local function tasklist(s)
 
         widget_template = widget_template_tasklist,
         style = {
-                bg_focus = beautiful.bg_urgent,
+                bg_focus = beautiful.bg_focus,
         },
     }
 end

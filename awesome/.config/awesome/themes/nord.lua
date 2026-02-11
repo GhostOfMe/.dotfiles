@@ -36,7 +36,7 @@ local theme = {}
 theme.font = "FiraCode Nerd Font 10"
 
 theme.bg_normal = nord.n0
-theme.bg_focus = nord.n8
+theme.bg_focus = nord.n1
 theme.bg_urgent = nord.n2
 -- theme.bg_minimize   = "#444444"
 theme.bg_systray = theme.bg_normal
@@ -55,7 +55,7 @@ theme.border_normal = nord.n0
 theme.border_focus = nord.n10
 theme.border_marked = nord.n7
 
-theme.taglist_bg_focus = theme.bg_focus
+theme.taglist_bg_focus = nord.n8
 theme.taglist_fg_focus = theme.bg_normal
 theme.taglist_bg_empty = theme.bg_normal
 theme.taglist_fg_empty = nord.n3
