@@ -54,7 +54,7 @@ local function tasklist(s)
         screen   = s,
         filter   = awful.widget.tasklist.filter.currenttags,
         buttons  = tasklist_buttons,
-        layout = wibox.layout.fixed.horizontal(),
+        layout   = wibox.layout.fixed.horizontal(),
 
         widget_template = widget_template_tasklist,
         style = {

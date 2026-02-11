@@ -49,8 +49,7 @@ theme.colors = {nord.n9, nord.n8, nord.n13, nord.n12, nord.n15}
 theme.red = nord.n11
 theme.green = nord.n12
 
-theme.useless_gap = dpi(0)
-theme.border_width = dpi(1)
+theme.border_width = dpi(2)
 theme.border_normal = nord.n0
 theme.border_focus = nord.n10
 theme.border_marked = nord.n7
