@@ -3,12 +3,14 @@ local gears = require("gears")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
 
+---@diagnostic disable-next-line
 awesome.set_preferred_icon_size (64)
 
 beautiful.tasklist_disable_task_name = true
 
 local tasklist_buttons = gears.table.join(
     awful.button({ }, 1, function (c)
+        ---@diagnostic disable-next-line
         if c == client.focus then
             c.minimized = true
         else

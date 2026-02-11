@@ -7,11 +7,15 @@ local modkey = require("main.user_variables").modkey
 local taglist_buttons = gears.table.join(awful.button({}, 1, function(t)
     t:view_only()
 end), awful.button({modkey}, 1, function(t)
+    ---@diagnostic disable-next-line
     if client.focus then
+        ---@diagnostic disable-next-line
         client.focus:move_to_tag(t)
     end
 end), awful.button({}, 3, awful.tag.viewtoggle), awful.button({modkey}, 3, function(t)
+    ---@diagnostic disable-next-line
     if client.focus then
+        ---@diagnostic disable-next-line
         client.focus:toggle_tag(t)
     end
 end), awful.button({}, 4, function(t)

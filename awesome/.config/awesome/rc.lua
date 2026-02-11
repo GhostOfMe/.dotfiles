@@ -10,7 +10,7 @@ local naughty = require("naughty")
 require("awful.hotkeys_popup.keys")
 local dpi = require("beautiful.xresources").apply_dpi
 local logout = require("awesome-wm-widgets.logout-widget.logout")
-
+---@diagnostic disable-next-line
 awesome.themes_path = os.getenv("HOME") .. "/.config/awesome/themes/"
 
 local layouts = require("main.layouts")
@@ -56,8 +56,9 @@ require("key.taglist_buttons")
 
 local globalbuttons = require("key.globalbuttons")
 local globalkeys = require("key.globalkeys")
-
+---@diagnostic disable-next-line
 root.keys(globalkeys)
+---@diagnostic disable-next-line
 root.buttons(globalbuttons)
 
 require("main.rules")

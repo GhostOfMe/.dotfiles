@@ -3,10 +3,12 @@ local naughty = require("naughty")
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
+---@diagnostic disable-next-line
 if awesome.startup_errors then
     naughty.notify({
         preset = naughty.config.presets.critical,
         title = "Oops, there were errors during startup!",
+        ---@diagnostic disable-next-line
         text = awesome.startup_errors
     })
 end
@@ -14,6 +16,7 @@ end
 -- Handle runtime errors after startup
 do
     local in_error = false
+    ---@diagnostic disable-next-line
     awesome.connect_signal("debug::error", function(err)
         if in_error then
             return

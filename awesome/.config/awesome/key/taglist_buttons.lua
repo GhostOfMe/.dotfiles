@@ -1,5 +1,7 @@
 local awful  = require("awful")
 local gears  = require("gears")
+local xresources = require("beautiful.xresources")
+local dpi = xresources.apply_dpi
 
 local modkey = require("main.user_variables").modkey
 
@@ -8,13 +10,17 @@ awful.util.taglist_buttons             = gears.table.join(
 
   awful.button({}, 1, function(t) t:view_only() end),
   awful.button({ modkey }, 1, function(t)
+    ---@diagnostic disable-next-line
     if client.focus then
+      ---@diagnostic disable-next-line
       client.focus:move_to_tag(t)
     end
   end),
   awful.button({}, 3, awful.tag.viewtoggle),
   awful.button({ modkey }, 3, function(t)
+    ---@diagnostic disable-next-line
     if client.focus then
+      ---@diagnostic disable-next-line
       client.focus:toggle_tag(t)
     end
   end),
@@ -24,6 +30,7 @@ awful.util.taglist_buttons             = gears.table.join(
 
 awful.util.tasklist_buttons            = gears.table.join(
   awful.button({}, 1, function(c)
+    ---@diagnostic disable-next-line
     if c == client.focus then
       c.minimized = true
     else
@@ -37,6 +44,7 @@ awful.util.tasklist_buttons            = gears.table.join(
       end
       -- This will also un-minimize
       -- the client, if needed
+      ---@diagnostic disable-next-line
       client.focus = c
       c:raise()
     end

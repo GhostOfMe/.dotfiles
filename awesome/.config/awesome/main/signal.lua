@@ -1,8 +1,10 @@
 local awful = require("awful")
 local beautiful = require("beautiful")
+local gears = require("gears")
 
 -- {{{ Screen
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+---@diagnostic disable-next-line
 screen.connect_signal("property::geometry", function(s)
     -- Wallpaper
     if beautiful.wallpaper then
@@ -16,6 +18,7 @@ screen.connect_signal("property::geometry", function(s)
 end)
 
 -- No borders when rearranging only 1 non-floating or maximized client
+---@diagnostic disable-next-line
 screen.connect_signal("arrange", function(s)
     local only_one = #s.tiled_clients == 1
     for _, c in pairs(s.clients) do
@@ -29,25 +32,28 @@ screen.connect_signal("arrange", function(s)
 end)
 
 -- Signal function to execute when a new client appears.
+---@diagnostic disable-next-line
 client.connect_signal("manage", function(c)
     -- Set the windows at the slave,
     -- if not awesome.startup then awful.client.setslave(c) end
-
+    ---@diagnostic disable-next-line
     if awesome.startup and not c.size_hints.user_position and not c.size_hints.program_position then
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
 end)
-
+---@diagnostic disable-next-line
 client.connect_signal("manage", function(c)
+    ---@diagnostic disable-next-line
     if not awesome.startup then
         awful.client.setslave(c)
     end
 end)
-
+---@diagnostic disable-next-line
 client.connect_signal("focus", function(c)
     c.border_color = beautiful.border_focus
 end)
+---@diagnostic disable-next-line
 client.connect_signal("unfocus", function(c)
     c.border_color = beautiful.border_normal
 end)
@@ -57,6 +63,7 @@ end)
 -- end)
 
 -- Focus urgent windows
+---@diagnostic disable-next-line
 client.connect_signal("property::urgent", function(c)
     c.minimized = false
     c:jump_to()
