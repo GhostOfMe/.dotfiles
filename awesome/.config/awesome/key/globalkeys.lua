@@ -14,6 +14,7 @@ local altkey = vars.altkey
 local terminal = vars.terminal
 local explorer = vars.explorer
 local browser = vars.browser
+local gui_editor = vars.gui_editor
 
 -- {{{ Key bindings
 globalkeys = my_table.join( -- picom
