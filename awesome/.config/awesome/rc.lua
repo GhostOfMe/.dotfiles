@@ -1,11 +1,10 @@
 local ipairs, string, os, table, tostring, tonumber, type = ipairs, string, os, table, tostring, tonumber, type
 
-local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
 local beautiful = require("beautiful")
 local naughty = require("naughty")
-local lain = require("lain")
+
 -- local menubar       = require("menubar")
 
 require("awful.hotkeys_popup.keys")
@@ -43,16 +42,13 @@ awful.spawn.with_shell(
 --]]
 
 local vars = require("main.user_variables")
-require("main.error")
-
-local modkey = vars.modkey
-local editor = vars.editor
 
 awful.util.terminal = vars.terminal
 
 beautiful.init(vars.config_path .. "/themes/nord.lua")
 beautiful.maximized_hide_border = true
 
+require("main.error")
 require("main.tag")
 require("appearance.wibar")
 
