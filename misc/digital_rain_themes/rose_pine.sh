@@ -1,0 +1,1 @@
+alias digital_rain="digital_rain --color=#3e8fb0 --background=#191724"
