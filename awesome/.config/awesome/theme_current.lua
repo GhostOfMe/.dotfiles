@@ -1,5 +1,5 @@
 --------------------------
--- Rose Piné awesome theme --
+-- Rosé Pine awesome theme --
 --------------------------
 local vars = require("main.user_variables")
 
