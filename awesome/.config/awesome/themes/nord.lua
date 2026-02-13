@@ -61,6 +61,8 @@ theme.taglist_fg_empty = nord.n3
 theme.taglist_fg_urgent = theme.bg_normal
 theme.taglist_bg_urgent = nord.n13
 theme.taglist_bg_occupied = theme.bg_normal
+theme.taglist_fg_occupied = theme.fg_normal
+
 
 theme.green = nord.n14
 theme.blue = nord.n8

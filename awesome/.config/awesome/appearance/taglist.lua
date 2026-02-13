@@ -1,5 +1,6 @@
 local gears = require("gears")
 local awful = require("awful")
+local beautiful = require("beautiful")
 
 local modkey = require("main.user_variables").modkey
 
@@ -28,7 +29,7 @@ function my_taglist(s)
     return awful.widget.taglist {
         screen = s,
         filter = awful.widget.taglist.filter.all,
-        buttons = taglist_buttons
+        buttons = taglist_buttons,
     }
 end
 
