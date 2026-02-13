@@ -147,4 +147,4 @@ setxkbmap -option compose:ralt
 
 
 #[ -f "/home/user/.ghcup/env" ] && source "/home/user/.ghcup/env" # ghcup-env
-[ -f "/home/user/.ghcup/env" ] && source "/home/user/.ghcup/env" # ghcup-env
+#[ -f "/home/user/.ghcup/env" ] && source "/home/user/.ghcup/env" # ghcup-env

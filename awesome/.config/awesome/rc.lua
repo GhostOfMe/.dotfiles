@@ -45,12 +45,12 @@ local vars = require("main.user_variables")
 
 awful.util.terminal = vars.terminal
 
-beautiful.init(vars.config_path .. "/themes/nord.lua")
+beautiful.init(vars.config_path .. "/theme_current.lua")
 beautiful.maximized_hide_border = true
 
 require("main.error")
 require("main.tag")
-require("appearance.wibar")
+require("wibar_current")
 
 require("key.taglist_buttons")
 
