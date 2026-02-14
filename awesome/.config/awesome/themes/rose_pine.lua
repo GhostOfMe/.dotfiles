@@ -49,7 +49,7 @@ theme.clock_fg = rp.n5
 
 theme.border_width = dpi(2)
 theme.border_normal = rp.n0
-theme.border_focus = rp.n10
+theme.border_focus = rp.n6
 theme.border_marked = rp.n7
 
 theme.taglist_bg_focus = rp.n6
