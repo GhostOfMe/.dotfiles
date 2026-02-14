@@ -1,0 +1,26 @@
+/* ROFI ONELINE THEME USING THE NORD COLOR PALETTE */
+/* Author: Newman Sanchez (https://github.com/newmanls) */
+
+* {
+	rp1: #191724;
+	rp2: #1f1d2e;
+	rp3: #e0def4;
+	rp4: #6e6a86;
+	rp5: #9ccfd8;
+	rp6: #31748f;
+	rp7: #ebbcba;
+	rp8: #c4a7e7;
+	rp9: #eb6f92;
+	rp10: #f6c177;
+
+    background-color:   transparent;
+    text-color:         @rp3;
+    accent-color:       @rp9;
+    urgent-color:       @rp10;
+    
+    bg0:                @rp1;
+    bg1:                @rp2;
+    fg0:                @rp3;
+    text-color:         @rp3;
+
+}

@@ -1,7 +1,7 @@
 /* ROFI SQUARED THEME USING THE NORD PALETTE  */
 /* Author: Newman Sanchez (https://github.com/newmanls) */
 
-@import "~/.config/rofi/themes/nord_colors.rasi"
+@import "~/.config/rofi/themes/current_colors.rasi"
 
 * {
     font:   "FiraCode Nerd Font Medium 12";
