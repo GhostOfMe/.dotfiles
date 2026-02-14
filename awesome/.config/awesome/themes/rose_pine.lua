@@ -19,6 +19,7 @@ local rp = {
     n12 = "#21202e",
     n13 = "#403d52",
     n14 = "#524f67",
+    n15 = "#684a54"
 }
 
 local theme_assets = require("beautiful.theme_assets")
@@ -32,7 +33,7 @@ local theme = {}
 theme.font = "FiraCode Nerd Font 10"
 
 theme.bg_normal = rp.n1
-theme.bg_focus = rp.n1
+theme.bg_focus = rp.n13
 theme.bg_urgent = rp.n2
 -- theme.bg_minimize   = "#444444"
 theme.bg_systray = theme.bg_normal
@@ -44,6 +45,7 @@ theme.fg_urgent = rp.n14
 theme.colors = {rp.n7, rp.n8, rp.n10, rp.n11, rp.n10, rp.n8}
 theme.red = rp.n11
 theme.green = rp.n12
+theme.clock_fg = rp.n5
 
 theme.border_width = dpi(2)
 theme.border_normal = rp.n0
@@ -53,14 +55,14 @@ theme.border_marked = rp.n7
 theme.taglist_bg_focus = rp.n6
 theme.taglist_fg_focus = theme.bg_normal
 theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_fg_empty = rp.n3
+theme.taglist_fg_empty = rp.n15
 theme.taglist_fg_urgent = theme.bg_normal
 theme.taglist_bg_urgent = rp.n9
 theme.taglist_bg_occupied = theme.bg_normal
 theme.taglist_fg_occupied = rp.n8
 
-theme.green = rp.n7
-theme.blue = rp.n11
+theme.green = rp.n10
+theme.blue = rp.n7
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -101,7 +103,7 @@ theme.menu_width = dpi(100)
 -- beautiful.variable in your rc.lua
 -- theme.bg_widget = "#cc0000"
 
-theme.wallpaper = themes_path .. "backgrounds/rp/1.jpg"
+theme.wallpaper = themes_path .. "backgrounds/rp/2.jpg"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path .. "icons/rp/layouts/fairh.png"

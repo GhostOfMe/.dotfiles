@@ -1,6 +1,7 @@
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
+local beautiful = require("beautiful")
 local dpi = require("beautiful.xresources").apply_dpi
 
 local appearance = {
@@ -65,7 +66,7 @@ awful.screen.connect_for_each_screen(function(s)
             separator,
             wibox.container.margin(appearance.my_widgets.keyboardlayout(s), 0, 0, 0, 1),
             separator,
-            appearance.my_widgets.textclock(s),
+            appearance.my_widgets.textclock(s, beautiful.clock_fg),
             s.mylayoutbox
         }
     }

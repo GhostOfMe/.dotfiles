@@ -143,10 +143,12 @@ end
 
 -- Textclock
 
-function widgets.textclock(s, fg)
+function widgets.textclock(s, fg, fg_date)
     os.setlocale(os.getenv("LANG")) -- to localize the clock
     fg = fg or beautiful.fg_normal
-    local mytextclock = wibox.widget.textclock(markup(fg, "%a %d %b ") .. markup(fg, "|") ..
+    fg_date = fg_date or beautiful.fg_normal
+
+    local mytextclock = wibox.widget.textclock(markup(fg_date, "%a %d %b ") .. markup(fg, "|") ..
                                                    markup.bold(markup(fg, " %H:%M ")))
     mytextclock.font = beautiful.font
 
