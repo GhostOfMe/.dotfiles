@@ -64,7 +64,7 @@ awful.screen.connect_for_each_screen(function(s)
             separator,
             appearance.my_widgets.temp(s),
             separator,
-            wibox.container.margin(appearance.my_widgets.keyboardlayout(s), 0, 0, 0, 1),
+            appearance.my_widgets.keyboardlayout(s),
             separator,
             appearance.my_widgets.textclock(s, beautiful.clock_fg),
             s.mylayoutbox
