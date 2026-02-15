@@ -1,7 +1,8 @@
 # background_blur = true
 
 import = [
-  "~/.config/alacritty/current_colors.toml"
+  "~/.config/alacritty/current_colors.toml",
+  "~/.config/alacritty/opacity.toml"
 ]
 
 [font]
@@ -31,5 +32,4 @@ style = "Regular"
 x = 0
 y = 0
 
-[window]
-opacity = 0.2
+
