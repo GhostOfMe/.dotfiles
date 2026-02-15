@@ -148,7 +148,7 @@ function widgets.textclock(s, fg, fg_date)
     fg = fg or beautiful.fg_normal
     fg_date = fg_date or beautiful.fg_normal
 
-    local mytextclock = wibox.widget.textclock(markup(fg_date, "%a %d %b ") .. markup(fg, "|") ..
+    local mytextclock = wibox.widget.textclock(markup(fg_date, "%a %d %b ") .. markup(fg_date, "|") ..
                                                    markup.bold(markup(fg, " %H:%M ")))
     mytextclock.font = beautiful.font
 
