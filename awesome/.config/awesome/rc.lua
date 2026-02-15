@@ -68,6 +68,6 @@ require("main.signal")
 beautiful.useless_gap = 4
 
 -- awful.spawn.with_shell("~/.config/awesome/random_wallpaper.sh")
--- awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+awful.spawn.with_shell("~/.config/awesome/scripts/autostart.sh")
 -- awful.spawn.with_shell("~/.config/awesome/picom_on.sh")
 -- awful.spawn.with_shell("~/.config/awesome/player.sh")
