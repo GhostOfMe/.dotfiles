@@ -3,9 +3,10 @@ Originally based on [Awesome WM Copycats](https://github.com/lcpz/awesome-copyca
 
 Config uses modular approach of [Modularized AwesomeWM configuration](https://github.com/RobberFox/AwesomeFox).
 
-# Icons
+# Icons & GTK Themes
 
-https://github.com/rose-pine/gtk
+[Rosé Pine](https://github.com/rose-pine/gtk)
+[Nord](https://github.com/EliverLara/Nordic)
 
 # Usage:
 Uses [GNU Stow](https://www.gnu.org/software/stow/).
