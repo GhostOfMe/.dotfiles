@@ -11,9 +11,34 @@ local appearance = {
     my_widgets = require("appearance.widget_bar")
 }
 
-local separator = wibox.container.margin(wibox.widget.textbox(" | "), 0, 0, 0, 1)
+local separator = wibox.container.margin(wibox.widget.textbox(" "), 0, 0, 0, 1)
+
+local wibar_colors = beautiful.colors
 
 awful.screen.connect_for_each_screen(function(s)
+
+    local my_widgets = {
+        appearance.my_widgets.systray(s), appearance.my_widgets.alsa(s, beautiful.bg_normal),
+        appearance.my_widgets.my_netinfo(s, beautiful.bg_normal, beautiful.bg_normal),
+        appearance.my_widgets.memory(s, beautiful.bg_normal),
+        appearance.my_widgets.cpu(s, beautiful.bg_normal),
+        appearance.my_widgets.temp(s, beautiful.bg_normal),
+        appearance.my_widgets.keyboardlayout(s, beautiful.bg_normal),
+        appearance.my_widgets.textclock(s, beautiful.bg_normal, beautiful.bg_normal)
+    }
+
+    local right_layout = wibox.layout.fixed.horizontal()
+
+    local cur = 1
+    for i = 2, #my_widgets do
+        local color_p = wibar_colors[((cur - 1) % #wibar_colors) + 1]
+        cur = cur + 1
+
+        local tmp_background_widget = wibox.container.background(my_widgets[i], color_p)
+        right_layout:add(wibox.container.background(separator, color_p))
+        right_layout:add(tmp_background_widget)
+        right_layout:add(wibox.container.background(separator, color_p))
+    end
 
     appearance.my_wallpaper(s)
 
@@ -22,15 +47,12 @@ awful.screen.connect_for_each_screen(function(s)
     -- Create an imagebox widget which will contain an icon indicating which layout we're using.
     -- We need one layoutbox per screen.
     s.mylayoutbox = awful.widget.layoutbox(s)
-    s.mylayoutbox:buttons(gears.table.join(awful.button({}, 1, function()
-        awful.layout.inc(1)
-    end), awful.button({}, 3, function()
-        awful.layout.inc(-1)
-    end), awful.button({}, 4, function()
-        awful.layout.inc(1)
-    end), awful.button({}, 5, function()
-        awful.layout.inc(-1)
-    end)))
+    s.mylayoutbox:buttons(gears.table.join(
+        awful.button({}, 1, function() awful.layout.inc(1) end),
+        awful.button({}, 3, function() awful.layout.inc(-1) end),
+        awful.button({}, 4, function() awful.layout.inc(1) end),
+        awful.button({}, 5, function() awful.layout.inc(-1) end)
+    ))
 
     s.mywibox = awful.wibar({
         position = "top",
@@ -47,26 +69,12 @@ awful.screen.connect_for_each_screen(function(s)
             s.mypromptbox
         },
 
-        wibox.container.margin(appearance.my_tasklist(s), 30, 30, 0, 0), -- Middle widget
+        appearance.my_tasklist(s), -- Middle widget
         -- nil,
 
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            appearance.my_widgets.systray(s),
-            separator,
-            appearance.my_widgets.alsa(s),
-            separator,
-            appearance.my_widgets.my_netinfo(s),
-            separator,
-            appearance.my_widgets.memory(s),
-            separator,
-            appearance.my_widgets.cpu(s),
-            separator,
-            appearance.my_widgets.temp(s),
-            separator,
-            appearance.my_widgets.keyboardlayout(s),
-            separator,
-            appearance.my_widgets.textclock(s, beautiful.clock_fg),
+            right_layout,
             s.mylayoutbox
         }
     }

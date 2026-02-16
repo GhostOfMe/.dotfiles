@@ -26,13 +26,20 @@ function widgets.alsa(s, fg)
             widget:set_markup(markup.fontfg(beautiful.font, fg, string.format("%s %3.0f%%", icon, volume_now.level)))
         end
     })
-    myvolume.widget:buttons(awful.util.table.join(awful.button({}, 4, function()
-        awful.util.spawn("amixer set Master 1%+", false)
-        myvolume.update()
-    end), awful.button({}, 5, function()
-        awful.util.spawn("amixer set Master 1%-", false)
-        myvolume.update()
-    end)))
+    myvolume.widget:buttons(awful.util.table.join(
+        awful.button({}, 4,
+            function()
+                awful.util.spawn("amixer set Master 1%+", false)
+                myvolume.update()
+            end
+        ),
+        awful.button({}, 5,
+            function()
+                awful.util.spawn("amixer set Master 1%-", false)
+                myvolume.update()
+            end
+        )
+    ))
 
     return wibox.widget {
         screen = s,
@@ -48,9 +55,10 @@ function widgets.my_netinfo(s, fg1, fg2)
     local mynetdowninfo = wibox.widget.textbox()
     local mynetupinfo = lain.widget.net({
         settings = function()
-            widget:set_markup(markup.fontfg(beautiful.font, fg1, string.format("祝 %06.1f", net_now.sent % 10000)))
-            mynetdowninfo:set_markup(markup.fontfg(beautiful.font, fg2,
-                string.format(" %06.1f ", net_now.received % 10000)))
+            widget:set_markup(
+                markup.fontfg(beautiful.font, fg1, string.format("祝 %06.1f", net_now.sent % 10000)))
+            mynetdowninfo:set_markup(
+                markup.fontfg(beautiful.font, fg2, string.format(" %06.1f ", net_now.received % 10000)))
         end
     })
     return wibox.widget {
@@ -68,7 +76,9 @@ function widgets.memory(s, fg)
     fg = fg or beautiful.fg_normal
     local mymemory = lain.widget.mem({
         settings = function()
-            widget:set_markup(markup.fontfg(beautiful.font, fg, string.format(" %4.0fM", mem_now.used)))
+            widget:set_markup(
+                markup.fontfg(beautiful.font, fg, string.format(" %4.0fM", mem_now.used))
+            )
         end
     })
     return wibox.widget {
@@ -83,7 +93,8 @@ function widgets.cpu(s, fg)
     fg = fg or beautiful.fg_normal
     local mycpu = lain.widget.cpu({
         settings = function()
-            widget:set_markup(markup.fontfg(beautiful.font, fg, string.format(" %3.0f%%", cpu_now.usage)))
+            widget:set_markup(
+                markup.fontfg(beautiful.font, fg, string.format(" %3.0f%%", cpu_now.usage)))
         end
     })
     return wibox.widget {
@@ -98,7 +109,8 @@ function widgets.temp(s, fg)
     fg = fg or beautiful.fg_normal
     local mytemp = lain.widget.temp({
         settings = function()
-            widget:set_markup(markup.fontfg(beautiful.font, fg, string.format("%3.0f°C", coretemp_now)))
+            widget:set_markup(
+                markup.fontfg(beautiful.font, fg, string.format("%3.0f°C", coretemp_now)))
         end
     })
     return wibox.widget {
