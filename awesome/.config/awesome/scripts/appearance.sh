@@ -2,22 +2,20 @@
 
 SCRIPT_DIRECTORY="$HOME/.config/awesome/scripts/"
 AWESOME_DIRECTORY="$HOME/.config/awesome/"
-category_chosen=$(printf "Color Scheme\nWibar\nTransparency\nGaps" | rofi -dmenu -i)
+category_chosen=$(printf "Color Scheme\nWibar\nTransparency\nGaps" | rofi -dmenu -i -p "Appearance")
 
 
 case "$category_chosen" in
     "Color Scheme")  
-        scheme_chosen=$(printf "Nord\nRosé Pine" | rofi -dmenu -i) 
+        scheme_chosen=$(printf "Nord\nRosé Pine" | rofi -dmenu -i -p  "Color Scheme") 
         case "$scheme_chosen" in 
-            "Nord") 
-                $SCRIPT_DIRECTORY"/change_scheme.sh" "nord" ;;
-            "Rosé Pine") 
-                $SCRIPT_DIRECTORY"/change_scheme.sh" "rose_pine" ;;
+            "Nord")         $SCRIPT_DIRECTORY"/change_scheme.sh" "nord" ;;
+            "Rosé Pine")    $SCRIPT_DIRECTORY"/change_scheme.sh" "rose_pine" ;;
             *) exit 1 ;;
         esac
         ;;
     "Wibar") 
-        wibar_chosen=$(printf "Simple\nColorful" | rofi -dmenu -i)
+        wibar_chosen=$(printf "Simple\nColorful" | rofi -dmenu -i -p "Wibar")
         case "$wibar_chosen" in
             "Simple") 
                 rm $AWESOME_DIRECTORY"wibar_current.lua"
