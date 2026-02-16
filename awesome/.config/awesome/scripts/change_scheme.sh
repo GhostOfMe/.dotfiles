@@ -3,11 +3,13 @@
 AWESOME_PATH="$HOME/.config/awesome/"
 ROFI_PATH="$HOME/.config/rofi/themes/"
 ALACRITTY_PATH="$HOME/.config/alacritty/"
+GTK_PATH="$HOME/.config/gtk-3.0/settings.ini"
 
 case "$1" in
     "nord")
 
-        #TODO: GTK theme
+        GTK_NEW="gtk-theme-name=Nordic" 
+        GTK_ICONS_NEW="gtk-icon-theme-name=Nordzy"
             
         ALACRITTY_NEW=$ALACRITTY_PATH"nord_colors.toml"
         ROFI_NEW=$ROFI_PATH"nord_colors.rasi"
@@ -17,6 +19,9 @@ case "$1" in
     "rose_pine")
 
         #TODO: GTK theme
+
+        GTK_NEW="gtk-theme-name=rose-pine-gtk"
+        GTK_ICONS_NEW="gtk-icon-theme-name=rose-pine-dawn-icons"
         
         ALACRITTY_NEW=$ALACRITTY_PATH"rose_pine_colors.toml"
         ROFI_NEW=$ROFI_PATH"rose_pine_colors.rasi"
@@ -24,6 +29,11 @@ case "$1" in
         ;;
     *) exit 1 ;;    
 esac
+
+sed -i "s/.*gtk-theme-name.*/$GTK_NEW/" $GTK_PATH
+sed -i "s/.*gtk-icon-theme-name.*/$GTK_ICONS_NEW/" $GTK_PATH
+
+reload_gtk_theme
 
 rm $ALACRITTY_PATH"current_colors.toml"
 ln $ALACRITTY_NEW $ALACRITTY_PATH"current_colors.toml"
