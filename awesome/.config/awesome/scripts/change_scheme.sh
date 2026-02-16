@@ -28,6 +28,7 @@ case "$1" in
         ROFI_NEW=$ROFI_PATH"rose_pine_colors.rasi"
         
         AWESOME_NEW=$AWESOME_PATH"themes/rose_pine.lua"
+        
         ;;
     *) exit 1 ;;    
 esac
