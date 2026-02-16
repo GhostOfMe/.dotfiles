@@ -153,6 +153,7 @@ function widgets.textclock(s, fg, fg_date)
     mytextclock.font = beautiful.font
 
     -- Calendar
+    
     local cal = lain.widget.cal({
         attach_to = {mytextclock},
         notification_preset = {

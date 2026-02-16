@@ -17,7 +17,15 @@ local browser = vars.browser
 local gui_editor = vars.gui_editor
 
 -- {{{ Key bindings
-globalkeys = my_table.join( -- picom
+globalkeys = my_table.join(
+-- appearance
+awful.key({modkey}, "a", function()
+    awful.spawn.with_shell(vars.config_path .. "/scripts/appearance.sh")
+end, {
+    description = "Change apeearance",
+    group = "awesome"
+}),
+-- picom
 awful.key({modkey}, "p", function()
     awful.spawn.with_shell(vars.config_path .. "/scripts/picom_toggle.sh")
 end, {
