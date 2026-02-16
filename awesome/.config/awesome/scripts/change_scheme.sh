@@ -12,19 +12,21 @@ case "$1" in
         GTK_ICONS_NEW="gtk-icon-theme-name=Nordzy"
             
         ALACRITTY_NEW=$ALACRITTY_PATH"nord_colors.toml"
+        
         ROFI_NEW=$ROFI_PATH"nord_colors.rasi"
+        
         AWESOME_NEW=$AWESOME_PATH"themes/nord.lua"
     
         ;;
     "rose_pine")
 
-        #TODO: GTK theme
-
         GTK_NEW="gtk-theme-name=rose-pine-gtk"
         GTK_ICONS_NEW="gtk-icon-theme-name=rose-pine-dawn-icons"
         
         ALACRITTY_NEW=$ALACRITTY_PATH"rose_pine_colors.toml"
+        
         ROFI_NEW=$ROFI_PATH"rose_pine_colors.rasi"
+        
         AWESOME_NEW=$AWESOME_PATH"themes/rose_pine.lua"
         ;;
     *) exit 1 ;;    
@@ -32,8 +34,6 @@ esac
 
 sed -i "s/.*gtk-theme-name.*/$GTK_NEW/" $GTK_PATH
 sed -i "s/.*gtk-icon-theme-name.*/$GTK_ICONS_NEW/" $GTK_PATH
-
-reload_gtk_theme
 
 rm $ALACRITTY_PATH"current_colors.toml"
 ln $ALACRITTY_NEW $ALACRITTY_PATH"current_colors.toml"
