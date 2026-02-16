@@ -22,8 +22,8 @@ awful.screen.connect_for_each_screen(function(s)
                         appearance.my_widgets.memory(s, beautiful.bg_normal),
                         appearance.my_widgets.cpu(s, beautiful.bg_normal),
                         appearance.my_widgets.temp(s, beautiful.bg_normal),
-                        wibox.container.margin(appearance.my_widgets.keyboardlayout(s, beautiful.bg_normal), 0, 0, 0, 1),
-                        appearance.my_widgets.textclock(s, beautiful.bg_normal)}
+                        appearance.my_widgets.keyboardlayout(s, beautiful.bg_normal),
+                        appearance.my_widgets.textclock(s, beautiful.bg_normal, beautiful.bg_normal)}
 
     my_widgets[2].fg = "#000000"
 

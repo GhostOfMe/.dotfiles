@@ -1,25 +1,28 @@
 --------------------------
--- Rosé Pine awesome theme --
+-- Nord awesome theme --
 --------------------------
 local vars = require("main.user_variables")
 
-local rp = {
-    n0 = "#191724",
-    n1 = "#1f1d2e",
-    n2 = "#26233a",
-    n3 = "#6e6a86",
-    n4 = "#908caa",
-    n5 = "#e0def4",
-    n6 = "#eb6f92",
-    n7 = "#f6c177",
-    n8 = "#ebbcba",
-    n9 = "#31748f",
-    n10 = "#9ccfd8",
-    n11 = "#c4a7e7",
-    n12 = "#21202e",
-    n13 = "#403d52",
-    n14 = "#524f67",
-    n15 = "#684a54"
+local nord = {
+    n0 = "#2e3440",
+    n1 = "#3b4252",
+    n2 = "#434c5e",
+    n3 = "#4c566a",
+
+    n4 = "#d8dee9",
+    n5 = "#e5e9f0",
+    n6 = "#eceff4",
+
+    n7 = "#8fbcbb",
+    n8 = "#88c0d0",
+    n9 = "#81a1c1",
+    n10 = "#5e81ac",
+
+    n11 = "#bf616a",
+    n12 = "#d08770",
+    n13 = "#ebcb8b",
+    n14 = "#a3be8c",
+    n15 = "#b48ead"
 }
 
 local theme_assets = require("beautiful.theme_assets")
@@ -32,37 +35,37 @@ local theme = {}
 
 theme.font = "FiraCode Nerd Font 10"
 
-theme.bg_normal = rp.n1
-theme.bg_focus = rp.n13
-theme.bg_urgent = rp.n2
+theme.bg_normal = nord.n0
+theme.bg_focus = nord.n1
+theme.bg_urgent = nord.n2
 -- theme.bg_minimize   = "#444444"
 theme.bg_systray = theme.bg_normal
 
-theme.fg_normal = rp.n4
-theme.fg_focus = rp.n8
-theme.fg_urgent = rp.n14
+theme.fg_normal = nord.n4
+theme.fg_focus = nord.n8
+theme.fg_urgent = nord.n14
 -- theme.fg_minimize   = "#ffffff"
-theme.colors = {rp.n7, rp.n8, rp.n10, rp.n11, rp.n10, rp.n8}
-theme.red = rp.n11
-theme.green = rp.n12
-theme.clock_fg = rp.n5
+theme.colors = {nord.n9, nord.n8, nord.n13, nord.n12, nord.n15}
+theme.red = nord.n11
+theme.green = nord.n12
 
 theme.border_width = dpi(2)
-theme.border_normal = rp.n0
-theme.border_focus = rp.n6
-theme.border_marked = rp.n7
+theme.border_normal = nord.n0
+theme.border_focus = nord.n10
+theme.border_marked = nord.n7
 
-theme.taglist_bg_focus = rp.n6
+theme.taglist_bg_focus = nord.n8
 theme.taglist_fg_focus = theme.bg_normal
 theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_fg_empty = rp.n15
+theme.taglist_fg_empty = nord.n3
 theme.taglist_fg_urgent = theme.bg_normal
-theme.taglist_bg_urgent = rp.n9
+theme.taglist_bg_urgent = nord.n13
 theme.taglist_bg_occupied = theme.bg_normal
-theme.taglist_fg_occupied = rp.n8
+theme.taglist_fg_occupied = theme.fg_normal
 
-theme.green = rp.n10
-theme.blue = rp.n7
+
+theme.green = nord.n14
+theme.blue = nord.n8
 -- There are other variable sets
 -- overriding the default one when
 -- defined, the sets are:
@@ -103,21 +106,21 @@ theme.menu_width = dpi(100)
 -- beautiful.variable in your rc.lua
 -- theme.bg_widget = "#cc0000"
 
-theme.wallpaper = themes_path .. "backgrounds/rp/2.jpg"
+theme.wallpaper = themes_path .. "backgrounds/nord/1.jpg"
 
 -- You can use your own layout icons like this:
-theme.layout_fairh = themes_path .. "icons/rp/layouts/fairh.png"
-theme.layout_fairv = themes_path .. "icons/rp/layouts/layouts/fairv.png"
-theme.layout_floating = themes_path .. "icons/rp/layouts/floating.png"
-theme.layout_magnifier = themes_path .. "icons/rp/layouts/magnifier.png"
-theme.layout_max = themes_path .. "icons/rp/layouts/max.png"
-theme.layout_fullscreen = themes_path .. "icons/rp/layouts/fullscreen.png"
-theme.layout_tilebottom = themes_path .. "icons/rp/layouts/tilebottom.png"
-theme.layout_tileleft = themes_path .. "icons/rp/layouts/tileleft.png"
-theme.layout_tile = themes_path .. "icons/rp/layouts/tile.png"
-theme.layout_tiletop = themes_path .. "icons/rp/layouts/layouts/tiletop.png"
-theme.layout_spiral = themes_path .. "icons/rp/layouts/layouts/spiral.png"
-theme.layout_dwindle = themes_path .. "icons/rp/layouts/layouts/dwindle.png"
+theme.layout_fairh = themes_path .. "icons/nord/layouts/fairh.png"
+theme.layout_fairv = themes_path .. "icons/nord/layouts/layouts/fairv.png"
+theme.layout_floating = themes_path .. "icons/nord/layouts/floating.png"
+theme.layout_magnifier = themes_path .. "icons/nord/layouts/magnifier.png"
+theme.layout_max = themes_path .. "icons/nord/layouts/max.png"
+theme.layout_fullscreen = themes_path .. "icons/nord/layouts/fullscreen.png"
+theme.layout_tilebottom = themes_path .. "icons/nord/layouts/tilebottom.png"
+theme.layout_tileleft = themes_path .. "icons/nord/layouts/tileleft.png"
+theme.layout_tile = themes_path .. "icons/nord/layouts/tile.png"
+theme.layout_tiletop = themes_path .. "icons/nord/layouts/layouts/tiletop.png"
+theme.layout_spiral = themes_path .. "icons/nord/layouts/layouts/spiral.png"
+theme.layout_dwindle = themes_path .. "icons/nord/layouts/layouts/dwindle.png"
 
 -- Generate Awesome icon:
 theme.awesome_icon = theme_assets.awesome_icon(theme.menu_height, theme.bg_focus, theme.fg_focus)

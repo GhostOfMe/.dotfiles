@@ -14,6 +14,9 @@ case "$1" in
         rm $AWESOME_PATH"theme_current.lua"
         ln $AWESOME_PATH"themes/nord.lua" $AWESOME_PATH"theme_current.lua"
         echo 'awesome.restart()' | awesome-client
+
+        #TODO: GTK theme
+        
         ;;
     "rose_pine")
         rm $ALACRITTY_PATH"current_colors.toml"
@@ -25,6 +28,9 @@ case "$1" in
         rm $AWESOME_PATH"theme_current.lua"
         ln $AWESOME_PATH"themes/rose_pine.lua" $AWESOME_PATH"theme_current.lua"
         echo 'awesome.restart()' | awesome-client
+
+        #TODO: GTK theme
+
         ;;
     *) exit 1 ;;
 esac
