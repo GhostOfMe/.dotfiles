@@ -4,3 +4,6 @@ cmus/.config/cmus/lib.pl
 cmus/.config/cmus/search-history
 cmus/.config/cmus/autosave
 bpytop/.config/bpytop/error.log
+awesome/.config/awesome/wibar_current.lua
+awesome/.config/awesome/theme_current.lua
+awesome/.config/awesome/themes_old
