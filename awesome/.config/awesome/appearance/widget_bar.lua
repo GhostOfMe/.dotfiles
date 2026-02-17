@@ -11,7 +11,7 @@ local widgets = {}
 
 function widgets.alsa(s, fg)
     fg = fg or beautiful.fg_normal
-    local myvolume = lain.widget.alsa({
+    myvolume = lain.widget.alsa({
         settings = function()
             local icon = " "
             if volume_now.status == "off" then
@@ -40,6 +40,8 @@ function widgets.alsa(s, fg)
             end
         )
     ))
+
+    beautiful.volume = myvolume
 
     return wibox.widget {
         screen = s,
