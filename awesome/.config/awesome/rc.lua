@@ -65,7 +65,7 @@ require("main.rules")
 
 require("main.signal")
 
-beautiful.useless_gap = 4
+beautiful.useless_gap = require("appearance.gaps")
 
 -- awful.spawn.with_shell("~/.config/awesome/random_wallpaper.sh")
 awful.spawn.with_shell("~/.config/awesome/scripts/autostart.sh")
