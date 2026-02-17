@@ -250,7 +250,7 @@ awful.key({modkey}, "b", function()
     }
 ),
 -- On the fly useless gaps change
-awful.key({altkey, "Control"}, "+", function() lain.util.useless_gaps_resize(1) end,
+awful.key({altkey, "Control"}, "=", function() lain.util.useless_gaps_resize(1) end,
     {
         description = "increment useless gaps",
         group       = "tag"
@@ -510,14 +510,14 @@ awful.key({}, "XF86AudioPrev", function() os.execute("rmpc prev") end,
 awful.key({modkey}, "c", function() awful.spawn.with_shell("xsel | xsel -i -b") end,
     {
         description = "copy terminal to gtk",
-        group = "hotkeys"
+        group       = "hotkeys"
     }
 ),
 -- Copy clipboard to primary (gtk to terminals)
 awful.key({modkey}, "v", function() awful.spawn.with_shell("xsel -b | xsel") end, 
     {
         description = "copy gtk to terminal",
-        group = "hotkeys"
+        group       = "hotkeys"
     }
 ),
 -- User programs
@@ -597,7 +597,7 @@ end, {
 }), awful.key({altkey}, "#70", function(c)
     c:kill()
 end, {
-    description = "(q) close",
+    description = "close",
     group = "client"
 }), awful.key({modkey, "Control"}, "space", awful.client.floating.toggle, {
     description = "toggle floating",

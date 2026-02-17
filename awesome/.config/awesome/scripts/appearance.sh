@@ -3,7 +3,7 @@
 SCRIPT_PATH="$HOME/.config/awesome/scripts/"
 AWESOME_PATH="$HOME/.config/awesome/"
 
-category_chosen=$(printf "Color Scheme\nWibar\nTransparency\nGaps" | rofi -dmenu -i -p "Appearance")
+category_chosen=$(printf "Color Scheme\nWibar\nTransparency\nGaps (All Tags)\nGaps (Current Tag)" | rofi -dmenu -i -p "Appearance")
 case "$category_chosen" in
     "Color Scheme")  
         
@@ -38,7 +38,20 @@ case "$category_chosen" in
     "Transparency")  
     # TODO
     ;;
-    "Gaps")  
+    "Gaps (All Tags)")  
+        
+        gaps_chosen=$(printf "0\n1\n2\n3\n4\n5\n6\n7\n8" | rofi -dmenu -i -p  "Gaps")
+        if ! [[ $gaps_chosen =~ ^[0-9]+$ ]]; then exit 1 
+        fi
+        if [ $gaps_chosen -gt 9 ]; then exit 1
+        fi
+        if [ $gaps_chosen -lt 0 ]; then exit 1
+        fi
+        
+        echo 'for _, t in pairs(require("awful").screen.focused().tags) do t.gap = '$gaps_chosen ' end'| awesome-client
+        echo "return "$gaps_chosen > $AWESOME_PATH"appearance/gaps.lua"
+    ;;
+    "Gaps (Current Tag)")  
         
         gaps_chosen=$(printf "0\n1\n2\n3\n4\n5\n6\n7\n8" | rofi -dmenu -i -p  "Gaps")
         if ! [[ $gaps_chosen =~ ^[0-9]+$ ]]; then exit 1 
@@ -49,7 +62,6 @@ case "$category_chosen" in
         fi
         
         echo 'require("awful").screen.focused().selected_tag.gap = '$gaps_chosen | awesome-client
-        echo "return "$gaps_chosen > $AWESOME_PATH"appearance/gaps.lua"
     ;;
     *) exit 1 ;;
 esac
