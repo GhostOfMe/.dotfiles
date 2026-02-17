@@ -9,7 +9,6 @@ Config uses modular approach of [Modularized AwesomeWM configuration](https://gi
 - [Nord](https://github.com/EliverLara/Nordic)
 
 # Utils
-
 rofi caffeine nitrogen thunnar picom
 
 # Usage:
