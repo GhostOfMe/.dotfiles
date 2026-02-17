@@ -39,14 +39,15 @@ case "$category_chosen" in
     # TODO
     ;;
     "Gaps")  
-    # TODO
         
         gaps_chosen=$(printf "0\n1\n2\n3\n4\n5\n6\n7\n8" | rofi -dmenu -i -p  "Gaps")
-        if ! [[ $gaps_chosen =~ ^[0-9]+$ ]]; then exit 1 fi
+        if ! [[ $gaps_chosen =~ ^[0-9]+$ ]]; then exit 1 
+        fi
         if [ $gaps_chosen -gt 9 ]; then exit 1
         fi
         if [ $gaps_chosen -lt 0 ]; then exit 1
         fi
+        
         echo 'require("awful").screen.focused().selected_tag.gap = '$gaps_chosen | awesome-client
         echo "return "$gaps_chosen > $AWESOME_PATH"appearance/gaps.lua"
     ;;
