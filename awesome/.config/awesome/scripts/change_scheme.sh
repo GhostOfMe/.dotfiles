@@ -21,7 +21,7 @@ case "$1" in
     "rose_pine")
 
         GTK_NEW="gtk-theme-name=rose-pine-gtk"
-        GTK_ICONS_NEW="gtk-icon-theme-name=rose-pine-dawn-icons"
+        GTK_ICONS_NEW="gtk-icon-theme-name=rose-pine-icons"
         
         ALACRITTY_NEW=$ALACRITTY_PATH"rose_pine_colors.toml"
         
