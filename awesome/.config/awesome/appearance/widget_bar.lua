@@ -13,58 +13,18 @@ local widgets = {}
 -- Menu
 
 function widgets.menu(s)
-    local myawesomemenu = {
-    { "Hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
-    { "Manual", string.format("%s -e man awesome", terminal) },
-    { "Edit config", string.format("%s -e %s %s", terminal, editor, awesome.conffile) },
-    { "Restart", awesome.restart },
-    { "Quit", function() awesome.quit() end },
-    }
 
-    awful.util.mymainmenu = freedesktop.menu.build {
-        before = {
-            { "Awesome", myawesomemenu, beautiful.awesome_icon },
-            -- other triads can be put here
-        },
-        after = {
-            { "Open terminal", terminal },
-            -- other triads can be put here
-        }
-    }
-
-    -- Hide the menu when the mouse leaves it
-
-    awful.util.mymainmenu.wibox:connect_signal("mouse::leave", function()
-        if not awful.util.mymainmenu.active_child or
-        (awful.util.mymainmenu.wibox ~= mouse.current_wibox and
-        awful.util.mymainmenu.active_child.wibox ~= mouse.current_wibox) then
-            awful.util.mymainmenu:hide()
-        else
-            awful.util.mymainmenu.active_child.wibox:connect_signal("mouse::leave",
-            function()
-                if awful.util.mymainmenu.wibox ~= mouse.current_wibox then
-                    awful.util.mymainmenu:hide()
-                end
-            end)
-        end
-    end)
 
     local awesome_icon = wibox.widget.imagebox()
     awesome_icon:set_image(beautiful.awesome_icon)
-
-    mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
-                                     menu = mymainmenu })
 
     -- Define mouse button actions
     awesome_icon:buttons(awful.util.table.join(
         awful.button({}, 1, function()
             -- Action for left click
             awful.spawn.with_shell(vars.config_path .. "/scripts/powermenu.sh")
-        end),
-        awful.button({}, 3, function() 
-            -- Action for right click
-            naughty.notify({ text = "Right click on imagebox!" })
         end)
+
     ))
                                      
     return wibox.widget {

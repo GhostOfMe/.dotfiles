@@ -12,6 +12,7 @@ local appearance = {
 }
 
 local separator = wibox.container.margin(wibox.widget.textbox(" | "), 0, 0, 0, 0)
+local gap = wibox.container.margin(wibox.widget.textbox(" "), 0, 0, 0, 0)
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -41,6 +42,7 @@ awful.screen.connect_for_each_screen(function(s)
         { -- Left widgets
             layout = wibox.layout.fixed.horizontal,
             appearance.my_widgets.menu(s),
+            gap,
             my_taglist(s),
             s.mypromptbox
         },
