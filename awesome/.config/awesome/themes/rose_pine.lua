@@ -52,12 +52,12 @@ theme.border_normal = rp.n0
 theme.border_focus = rp.n6
 theme.border_marked = rp.n7
 
-theme.taglist_bg_focus = rp.n6
+theme.taglist_bg_focus = rp.n8
 theme.taglist_fg_focus = theme.bg_normal
 theme.taglist_bg_empty = theme.bg_normal
 theme.taglist_fg_empty = rp.n15
 theme.taglist_fg_urgent = theme.bg_normal
-theme.taglist_bg_urgent = rp.n9
+theme.taglist_bg_urgent = rp.n6
 theme.taglist_bg_occupied = theme.bg_normal
 theme.taglist_fg_occupied = rp.n8
 
